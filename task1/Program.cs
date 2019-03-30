@@ -10,7 +10,19 @@ namespace task1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("hello world");
+            Console.WriteLine("Input radius of circle");
+            string radiusString = Console.ReadLine();
+            int.TryParse(radiusString, out int radius);
+            Console.WriteLine($"The square of the round is {Program.PerformCalculation(radius)}");
+            Console.ReadLine();
+         
+
+        }
+        public static decimal PerformCalculation(int r)
+        {
+            const decimal  Pi = 3.14m;
+            decimal square = Pi * r * r;
+            return square;
         }
     }
 }
