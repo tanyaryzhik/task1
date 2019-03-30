@@ -23,6 +23,14 @@ namespace task1
             int myVar;
             int myVariab1le;
 
+            //task2
+            double pi = 3.141592653;
+            double e = 2.7182818284590452;
+            Console.WriteLine($"Pi: {pi}");
+            Console.WriteLine($"e: {e}");
+            Console.ReadLine();
+
+
         }
         public static decimal PerformCalculation(int r)
         {
