@@ -28,6 +28,14 @@ namespace task1
             double e = 2.7182818284590452;
             Console.WriteLine($"Pi: {pi}");
             Console.WriteLine($"e: {e}");
+
+            //task3
+            string str1 = "\nмоя строка";
+                string str2 = "\tмоя строка";
+            string str3 = "\aмоя строка";
+            Console.WriteLine(str1);
+            Console.WriteLine(str2);
+            Console.WriteLine(str3);
             Console.ReadLine();
 
 
