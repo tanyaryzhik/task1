@@ -10,7 +10,7 @@ namespace task1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Input radius of circle");
+            Console.WriteLine("Input radius");
             string radiusString = Console.ReadLine();
             int.TryParse(radiusString, out int radius);
             Console.WriteLine($"The square of the round is {Program.PerformCalculation(radius)}");
