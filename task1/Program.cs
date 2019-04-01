@@ -36,7 +36,8 @@ namespace task1
             //Console.WriteLine(str1);
             //Console.WriteLine(str2);
             //Console.WriteLine(str3);
-            Hometask1_1();
+            //Hometask1_1();
+            Hometask1_2();
             Console.ReadLine();
         }
 
@@ -51,6 +52,15 @@ namespace task1
         {
             int x1 = -6598269;
             Console.WriteLine(x1);
+        }
+
+        public static void Hometask1_2()
+        {
+            string str1;
+            Console.WriteLine("Ваше имя?");
+            str1 = Console.ReadLine();
+            string str2 = "Привет, " + str1;
+            Console.WriteLine(str2);
         }
     }
 }
