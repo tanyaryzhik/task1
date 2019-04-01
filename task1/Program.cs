@@ -38,7 +38,8 @@ namespace task1
             //Console.WriteLine(str3);
             //Hometask1_1();
             //Hometask1_2();
-            Hometask1_3();
+            //Hometask1_3();
+            Hometask1_4();
             Console.ReadLine();
         }
 
@@ -69,6 +70,14 @@ namespace task1
             var v1 = 'v';
             v1 = 't';
             Console.WriteLine(v1);
+        }
+
+        public static void Hometask1_4()
+        {
+            Console.WriteLine("Input side of square");
+            string str = Console.ReadLine();
+            int side = Convert.ToInt32(str);
+            Console.WriteLine($"Perimeter is {4 * side}");
         }
     }
 }
