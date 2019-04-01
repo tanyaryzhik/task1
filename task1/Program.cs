@@ -37,7 +37,8 @@ namespace task1
             //Console.WriteLine(str2);
             //Console.WriteLine(str3);
             //Hometask1_1();
-            Hometask1_2();
+            //Hometask1_2();
+            Hometask1_3();
             Console.ReadLine();
         }
 
@@ -61,6 +62,13 @@ namespace task1
             str1 = Console.ReadLine();
             string str2 = "Привет, " + str1;
             Console.WriteLine(str2);
+        }
+
+        public static void Hometask1_3()
+        {
+            var v1 = 'v';
+            v1 = 't';
+            Console.WriteLine(v1);
         }
     }
 }
