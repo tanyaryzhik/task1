@@ -45,5 +45,17 @@ namespace task1
             decimal square = Pi * r * r;
             return square;
         }
+
+        public static void Task8()
+        {
+            Console.WriteLine("Input R");
+            double R = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Input h");
+            double h = Convert.ToDouble(Console.ReadLine());
+            double square = 2 * Math.PI * R * (R + h);
+            double volume = 2 * Math.PI * R * h;
+            Console.WriteLine($"Square is {square} and volume is {volume}");
+
+        }
     }
 }
