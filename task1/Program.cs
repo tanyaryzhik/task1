@@ -43,7 +43,8 @@ namespace task1
             //Hometask1_5();
             //Hometask1_6();
             //Hometask1_7();
-            Hometask1_8();
+            //Hometask1_8();
+            Hometask1_9();
             Console.ReadLine();
         }
 
@@ -120,6 +121,23 @@ namespace task1
             long b = 5;
             byte c = (byte)(a * b);
             Console.WriteLine(c);
+        }
+
+        public static void Hometask1_9()
+        {
+            Console.WriteLine("Input a");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input b");
+            int b = Convert.ToInt32(Console.ReadLine());
+            int temp = a;
+            a = b;
+            b = temp;
+            Console.WriteLine($"a became {a} and b became {b}");
+
+            a += b;
+            b = a - b;
+            a = a - b;
+            Console.WriteLine($"a became {a} and b became {b}");
         }
     }
 }
