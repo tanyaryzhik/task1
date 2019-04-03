@@ -41,7 +41,8 @@ namespace task1
             //Hometask1_3();
             //Hometask1_4();
             //Hometask1_5();
-            Hometask1_6();
+            //Hometask1_6();
+            Hometask1_7();
             Console.ReadLine();
         }
 
@@ -102,6 +103,14 @@ namespace task1
             int tens = num / 10;
             int units = num % 10;
             Console.WriteLine($"Number {num} has {tens} tens and {units} units");
+        }
+
+        public static void Hometask1_7()
+        {
+            int a = 5;
+            int b = 34;
+            long c = (long)(a + b);
+            Console.WriteLine(c);
         }
     }
 }
