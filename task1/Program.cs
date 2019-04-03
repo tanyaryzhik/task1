@@ -40,7 +40,8 @@ namespace task1
             //Hometask1_2();
             //Hometask1_3();
             //Hometask1_4();
-            Hometask1_5();
+            //Hometask1_5();
+            Hometask1_6();
             Console.ReadLine();
         }
 
@@ -92,6 +93,15 @@ namespace task1
             double square3 = square1 - square2;
             Console.WriteLine($"Square 1 is {square1} \nSquare 2 is {square2}");
             Console.WriteLine($"Square of ring is {square3}");
+        }
+
+        public static void Hometask1_6()
+        {
+            Console.WriteLine("Input two-digit number");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int tens = num / 10;
+            int units = num % 10;
+            Console.WriteLine($"Number {num} has {tens} tens and {units} units");
         }
     }
 }
