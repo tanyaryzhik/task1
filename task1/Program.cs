@@ -42,7 +42,8 @@ namespace task1
             //Hometask1_4();
             //Hometask1_5();
             //Hometask1_6();
-            Hometask1_7();
+            //Hometask1_7();
+            Hometask1_8();
             Console.ReadLine();
         }
 
@@ -110,6 +111,14 @@ namespace task1
             int a = 5;
             int b = 34;
             long c = (long)(a + b);
+            Console.WriteLine(c);
+        }
+
+        public static void Hometask1_8()
+        {
+            long a = 400000;
+            long b = 5;
+            byte c = (byte)(a * b);
             Console.WriteLine(c);
         }
     }
