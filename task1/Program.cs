@@ -40,7 +40,8 @@ namespace task1
             //Console.WriteLine(IsNumberBetweenGiven());
             //IsNumberOddAndThreeDigit();
             //TaskFour();
-            Calculator();
+            //Calculator();
+            GetNumberArea();
             Console.ReadLine();
         }
 
@@ -143,6 +144,26 @@ namespace task1
             Console.WriteLine($"{operand1} {sign} {operand2} = {result}");
         }
 
-      
+        public static void GetNumberArea()
+        {
+            Console.WriteLine("Input number from 0 to 100");
+            int number = Convert.ToInt32(Console.ReadLine());
+            if (number >=0 && number<=14)
+            {
+                Console.WriteLine($"{number} is in area [0-14]");
+            }
+            if (number >= 15 && number <=35)
+            {
+                Console.WriteLine($"{number} is in area [15-35]");
+            }
+            if (number >= 36 && number <=50)
+            {
+                Console.WriteLine($"{number} is in area [36-50]");
+            }
+            if (number >= 50 && number <=100)
+            {
+                Console.WriteLine($"{number} is in area [50-100]");
+            }
+        }
     }
 }
