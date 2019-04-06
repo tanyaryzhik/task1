@@ -37,7 +37,8 @@ namespace task1
             //Console.WriteLine(str2);
             //Console.WriteLine(str3);
             //Console.WriteLine(GetHouresFromSeconds(2659847));
-            Console.WriteLine(IsNumberBetweenGiven());
+            //Console.WriteLine(IsNumberBetweenGiven());
+            IsNumberOddAndThreeDigit();
             Console.ReadLine();
         }
 
@@ -67,6 +68,21 @@ namespace task1
                 return true;
             else
                 return false;
+        }
+
+        public static void IsNumberOddAndThreeDigit()
+        {
+            Console.WriteLine("Input number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            if (number%2 != 0)
+            {
+                if ((number / 100 != 0) && (number / 1000 == 0))
+                    {
+                    Console.WriteLine($"Number {number} is odd and threedigit");
+                }
+            }
+            else
+                Console.WriteLine($"Number {number} isn't odd and threedigit");
         }
     }
 }
