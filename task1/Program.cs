@@ -36,7 +36,8 @@ namespace task1
             //Console.WriteLine(str1);
             //Console.WriteLine(str2);
             //Console.WriteLine(str3);
-            Console.WriteLine(GetHouresFromSeconds(2659847));
+            //Console.WriteLine(GetHouresFromSeconds(2659847));
+            Console.WriteLine(IsNumberBetweenGiven());
             Console.ReadLine();
         }
 
@@ -53,6 +54,19 @@ namespace task1
             return hours;
         }
 
-        
+        public static bool IsNumberBetweenGiven()
+        {
+            //
+            // Input three numbers.
+            //
+            int a = Convert.ToInt32(Console.ReadLine());
+            int b = Convert.ToInt32(Console.ReadLine());
+            int c = Convert.ToInt32(Console.ReadLine());
+
+            if ((b < a && b > c) || (b > a && b < c))
+                return true;
+            else
+                return false;
+        }
     }
 }
