@@ -41,7 +41,8 @@ namespace task1
             //IsNumberOddAndThreeDigit();
             //TaskFour();
             //Calculator();
-            GetNumberArea();
+            //GetNumberArea();
+            Translator();
             Console.ReadLine();
         }
 
@@ -148,22 +149,68 @@ namespace task1
         {
             Console.WriteLine("Input number from 0 to 100");
             int number = Convert.ToInt32(Console.ReadLine());
-            if (number >=0 && number<=14)
+            if (number >= 0 && number <= 14)
             {
                 Console.WriteLine($"{number} is in area [0-14]");
             }
-            if (number >= 15 && number <=35)
+            if (number >= 15 && number <= 35)
             {
                 Console.WriteLine($"{number} is in area [15-35]");
             }
-            if (number >= 36 && number <=50)
+            if (number >= 36 && number <= 50)
             {
                 Console.WriteLine($"{number} is in area [36-50]");
             }
-            if (number >= 50 && number <=100)
+            if (number >= 50 && number <= 100)
             {
                 Console.WriteLine($"{number} is in area [50-100]");
             }
         }
+
+        public static void Translator()
+        {
+            Console.WriteLine("Input russian word");
+            string inputString = Console.ReadLine();
+            string translation = "";
+            switch (inputString)
+            {
+                case "дождь":
+                    translation = "rain";
+                    break;
+                case "снег":
+                    translation = "snow";
+                    break;
+                case "ясно":
+                    translation = "sunny";
+                    break;
+                case "туман":
+                    translation = "mist";
+                    break;
+                case "ветер":
+                    translation = "wind";
+                    break;
+                case "штиль":
+                    translation = "still";
+                    break;
+                case "шторм":
+                    translation = "storm";
+                    break;
+                case "торнадо":
+                    translation = "tornado";
+                    break;
+                case "ливень":
+                    translation = "shower";
+                    break;
+                case "облака":
+                    translation = "cloud";
+                    break;
+                default:
+                    Console.WriteLine("This word has no translation in this app");
+                    return;
+            }
+            Console.WriteLine($"{inputString} in English is {translation}");
+         }       
+
     }
 }
+
