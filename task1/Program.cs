@@ -39,7 +39,8 @@ namespace task1
             //Console.WriteLine(GetHouresFromSeconds(2659847));
             //Console.WriteLine(IsNumberBetweenGiven());
             //IsNumberOddAndThreeDigit();
-            TaskFour();
+            //TaskFour();
+            Calculator();
             Console.ReadLine();
         }
 
@@ -52,7 +53,7 @@ namespace task1
 
         public static int GetHouresFromSeconds(int seconds)
         {
-            int hours = seconds/3600;
+            int hours = seconds / 3600;
             return hours;
         }
 
@@ -75,10 +76,10 @@ namespace task1
         {
             Console.WriteLine("Input number");
             int number = Convert.ToInt32(Console.ReadLine());
-            if (number%2 != 0)
+            if (number % 2 != 0)
             {
                 if ((number / 100 != 0) && (number / 1000 == 0))
-                    {
+                {
                     Console.WriteLine($"Number {number} is odd and threedigit");
                 }
             }
@@ -105,7 +106,43 @@ namespace task1
             Console.WriteLine(z);
             x = y - x++ * z;
             Console.WriteLine(x);
-
         }
+
+        public static void Calculator()
+        {
+            Console.WriteLine("Input first number");
+            int operand1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input second number");
+            int operand2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Choose operation +, -, *, /");
+            string sign = Console.ReadLine();
+            int result = 0;
+
+            switch (sign)
+            {
+                case "+":
+                    result = operand1 + operand2;
+                    break;
+                case "-":
+                    result = operand1 - operand2;
+                    break;
+                case "*":
+                    result = operand1 * operand2;
+                    break;
+                case "/":
+                    if (operand2 == 0)
+                    {
+                        Console.WriteLine("Cann't devide by zero");
+                    }
+                    else
+                    { result = operand1 / operand2; }
+                    break;
+                default:
+                    break;
+            }
+            Console.WriteLine($"{operand1} {sign} {operand2} = {result}");
+        }
+
+      
     }
 }
