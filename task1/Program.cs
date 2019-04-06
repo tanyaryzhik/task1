@@ -42,7 +42,8 @@ namespace task1
             //TaskFour();
             //Calculator();
             //GetNumberArea();
-            Translator();
+            //Translator();
+            BonusCalculation();
             Console.ReadLine();
         }
 
@@ -209,8 +210,45 @@ namespace task1
                     return;
             }
             Console.WriteLine($"{inputString} in English is {translation}");
-         }       
+         } 
+        
+        public static void BonusCalculation()
+        {
+            Console.WriteLine("Input sallary");
+            double salary = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Input stage");
+            int stage = Convert.ToInt32(Console.ReadLine());
+            double bonus = 0;
+
+            if (stage<5)
+            {
+               bonus = 0.1;
+            }
+            if (stage >= 5 && stage<10)
+            {
+                bonus = 0.15;
+            }
+            if (stage >=10 && stage < 15)
+            {
+                bonus = 0.25;
+            }
+            if (stage >= 15 && stage <20)
+            {
+                bonus = 0.35;
+            }
+            if (stage >= 20 && stage < 25)
+            {
+                bonus = 0.45;
+            }
+            if (stage >= 25)
+            {
+                bonus = 0.5;
+            }
+            double result = salary + bonus * salary;
+            Console.WriteLine($"Salary {salary} and stage {stage}, bonus is {bonus*salary} and result is {result}");
+        }
 
     }
+
 }
 
