@@ -40,10 +40,10 @@ namespace task1
             //Console.WriteLine(IsNumberBetweenGiven());
             //IsNumberOddAndThreeDigit();
             //TaskFour();
-            //Calculator();
+            Calculator();
             //GetNumberArea();
             //Translator();
-            BonusCalculation();
+            //BonusCalculation();
             Console.ReadLine();
         }
 
@@ -113,12 +113,33 @@ namespace task1
 
         public static void Calculator()
         {
-            Console.WriteLine("Input first number");
-            int operand1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Input second number");
-            int operand2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Choose operation +, -, *, /");
-            string sign = Console.ReadLine();
+            int operand1 = 0;
+            int operand2 = 0;
+            string sign ="";
+            bool isInputCorrect = false;
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Input first number");
+                    operand1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Input second number");
+                    operand2 = Convert.ToInt32(Console.ReadLine());
+
+                }
+                catch
+                {
+                    isInputCorrect = true;
+                    continue;
+                }
+                Console.WriteLine("Choose operation +, -, *, /");
+                sign = Console.ReadLine();
+                if (sign != "+" && sign != "-" && sign != "*" && sign != "/")
+                { isInputCorrect = true; }
+                else isInputCorrect = false;
+
+            } while (isInputCorrect);
+
             int result = 0;
 
             switch (sign)
@@ -135,7 +156,8 @@ namespace task1
                 case "/":
                     if (operand2 == 0)
                     {
-                        Console.WriteLine("Cann't devide by zero");
+                        Console.WriteLine("Can't devide by zero");
+                        return;
                     }
                     else
                     { result = operand1 / operand2; }
@@ -210,8 +232,8 @@ namespace task1
                     return;
             }
             Console.WriteLine($"{inputString} in English is {translation}");
-         } 
-        
+        }
+
         public static void BonusCalculation()
         {
             Console.WriteLine("Input sallary");
@@ -220,19 +242,19 @@ namespace task1
             int stage = Convert.ToInt32(Console.ReadLine());
             double bonus = 0;
 
-            if (stage<5)
+            if (stage < 5)
             {
-               bonus = 0.1;
+                bonus = 0.1;
             }
-            if (stage >= 5 && stage<10)
+            if (stage >= 5 && stage < 10)
             {
                 bonus = 0.15;
             }
-            if (stage >=10 && stage < 15)
+            if (stage >= 10 && stage < 15)
             {
                 bonus = 0.25;
             }
-            if (stage >= 15 && stage <20)
+            if (stage >= 15 && stage < 20)
             {
                 bonus = 0.35;
             }
@@ -245,7 +267,7 @@ namespace task1
                 bonus = 0.5;
             }
             double result = salary + bonus * salary;
-            Console.WriteLine($"Salary {salary} and stage {stage}, bonus is {bonus*salary} and result is {result}");
+            Console.WriteLine($"Salary {salary} and stage {stage}, bonus is {bonus * salary} and result is {result}");
         }
 
     }
