@@ -115,30 +115,45 @@ namespace task1
         {
             int operand1 = 0;
             int operand2 = 0;
-            string sign ="";
-            bool isInputCorrect = false;
+            string sign = "";
+            bool success = false;
+            //bool isInputCorrect = false;
             do
             {
-                try
-                {
-                    Console.WriteLine("Input first number");
-                    operand1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Input second number");
-                    operand2 = Convert.ToInt32(Console.ReadLine());
+                //try
+                //{
+                //    Console.WriteLine("Input first number");
+                //    operand1 = Convert.ToInt32(Console.ReadLine());
+                //    Console.WriteLine("Input second number");
+                //    operand2 = Convert.ToInt32(Console.ReadLine());
 
-                }
-                catch
-                {
-                    isInputCorrect = true;
+                //}
+                //catch
+                //{
+                //    isInputCorrect = true;
+                //    continue;
+                //}
+                //sign = Console.ReadLine();
+                //if (sign != "+" && sign != "-" && sign != "*" && sign != "/")
+                //{ isInputCorrect = true; }
+                //else isInputCorrect = false;
+
+                Console.WriteLine("Input first number");
+                success = Int32.TryParse(Console.ReadLine(), out operand1);
+                if (success == false)
                     continue;
-                }
+                Console.WriteLine("Input second number");
+                success = Int32.TryParse(Console.ReadLine(), out operand2);
+                if (success == false)
+                    continue;
                 Console.WriteLine("Choose operation +, -, *, /");
                 sign = Console.ReadLine();
                 if (sign != "+" && sign != "-" && sign != "*" && sign != "/")
-                { isInputCorrect = true; }
-                else isInputCorrect = false;
+                    success = false;
 
-            } while (isInputCorrect);
+
+
+            } while (success==false);
 
             int result = 0;
 
@@ -268,6 +283,12 @@ namespace task1
             }
             double result = salary + bonus * salary;
             Console.WriteLine($"Salary {salary} and stage {stage}, bonus is {bonus * salary} and result is {result}");
+        }
+
+        public static void Factorial()
+        {
+            Console.WriteLine("Input number");
+            int number = Convert.ToInt32(Console.ReadLine());
         }
 
     }
