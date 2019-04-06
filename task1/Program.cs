@@ -38,7 +38,8 @@ namespace task1
             //Console.WriteLine(str3);
             //Console.WriteLine(GetHouresFromSeconds(2659847));
             //Console.WriteLine(IsNumberBetweenGiven());
-            IsNumberOddAndThreeDigit();
+            //IsNumberOddAndThreeDigit();
+            TaskFour();
             Console.ReadLine();
         }
 
@@ -83,6 +84,28 @@ namespace task1
             }
             else
                 Console.WriteLine($"Number {number} isn't odd and threedigit");
+        }
+
+        public static void TaskFour()
+        {
+            //
+            // Different operations.
+            //
+            int x = 10;
+            int y = 12;
+            int z = 3;
+
+            x += y - x++ * z;
+            Console.WriteLine(x);
+            z = --x - y * 5;
+            Console.WriteLine(z);
+            y /= x + 5 % z;
+            Console.WriteLine(y);
+            z = x++ + y * 5;
+            Console.WriteLine(z);
+            x = y - x++ * z;
+            Console.WriteLine(x);
+
         }
     }
 }
