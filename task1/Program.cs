@@ -311,7 +311,60 @@ namespace task1
             int widthRectangular = Convert.ToInt32(Console.ReadLine());
             DrawRectangularFrame(heightRectangular, widthRectangular);
             DrawRectangular(heightRectangular, widthRectangular);
+            Console.WriteLine("Input number of symbols to draw right triangle");
+            int cathetus = Convert.ToInt32(Console.ReadLine());
+            DrawRightTriangularFrame(cathetus);
+            DrawRightTriangular(cathetus);
 
+        }
+
+        private static void DrawRightTriangularFrame(int cathetus)
+        {
+            int hypotenuse;
+            for (int i = 0; i < cathetus-1; i++)
+            {
+                hypotenuse = i -1;
+                for (int k = 0; k < cathetus-1; k++)
+                {
+                    if (k==0)
+                    {
+                        Console.Write("*");
+                    }
+                    if (k==hypotenuse)
+                    {
+                        Console.Write("*");
+                        continue;
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                 Console.Write("\n");
+            }
+            DrawString(cathetus);
+        }
+        private static void DrawRightTriangular(int cathetus)
+        {
+            int hypotenuse;
+            for (int i = 0; i < cathetus; i++)
+            {
+                hypotenuse = i - 1;
+                for (int k = 0; k < cathetus - 1; k++)
+                {
+                    if (k == hypotenuse)
+                    {
+                        Console.Write("*");
+                        continue;
+                    }
+                    else if (k<hypotenuse)
+                    {
+                        Console.Write("*");
+                    }
+                }
+                Console.Write("\n");
+            }
+            DrawString(cathetus);
         }
 
         public static void DrawString(int number)
@@ -358,6 +411,8 @@ namespace task1
             }
             Console.Write("\n");
         }
+
+
 
     }
 
