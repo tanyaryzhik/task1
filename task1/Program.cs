@@ -40,10 +40,11 @@ namespace task1
             //Console.WriteLine(IsNumberBetweenGiven());
             //IsNumberOddAndThreeDigit();
             //TaskFour();
-            Calculator();
+            //Calculator();
             //GetNumberArea();
             //Translator();
             //BonusCalculation();
+            Factorial();
             Console.ReadLine();
         }
 
@@ -289,6 +290,12 @@ namespace task1
         {
             Console.WriteLine("Input number");
             int number = Convert.ToInt32(Console.ReadLine());
+            int result = 1;
+            for (int i = 1; i <= number;i++)
+            {
+                result *= i;
+            }
+            Console.WriteLine($"Factorial {number} is {result}");
         }
 
     }
