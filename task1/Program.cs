@@ -44,7 +44,8 @@ namespace task1
             //GetNumberArea();
             //Translator();
             //BonusCalculation();
-            Factorial();
+            //Factorial();
+            DrawFigures();
             Console.ReadLine();
         }
 
@@ -154,7 +155,7 @@ namespace task1
 
 
 
-            } while (success==false);
+            } while (success == false);
 
             int result = 0;
 
@@ -291,11 +292,71 @@ namespace task1
             Console.WriteLine("Input number");
             int number = Convert.ToInt32(Console.ReadLine());
             int result = 1;
-            for (int i = 1; i <= number;i++)
+            for (int i = 1; i <= number; i++)
             {
                 result *= i;
             }
             Console.WriteLine($"Factorial {number} is {result}");
+        }
+
+        public static void DrawFigures()
+        {
+            Console.WriteLine("Input number of symbols to draw string");
+            int numberForString = Convert.ToInt32(Console.ReadLine());
+            DrawString(numberForString);
+            Console.WriteLine("Input number of symbols to draw rectangle");
+            Console.WriteLine("Input height");
+            int heightRectangular = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input width");
+            int widthRectangular = Convert.ToInt32(Console.ReadLine());
+            DrawRectangularFrame(heightRectangular, widthRectangular);
+            DrawRectangular(heightRectangular, widthRectangular);
+
+        }
+
+        public static void DrawString(int number)
+        {
+            for (int i = 0; i < number; i++)
+            {
+                Console.Write("*");
+            }
+            Console.Write("\n");
+        }
+
+        public static void DrawRectangularFrame(int height, int width)
+        {
+            DrawString(width);
+            for (int i = 0; i < height - 2; i++)
+            {
+                for (int k = 0; k < width; k++)
+                {
+                    if (k == 0 || k == width - 1)
+                    {
+                        Console.Write("*");
+                        continue;
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.Write("\n");
+            }
+            DrawString(width);
+            Console.Write("\n");
+        }
+
+        public static void DrawRectangular(int height, int width)
+        {
+            for (int i = 0; i < height; i++)
+            {
+                for (int k = 0; k < width; k++)
+                {
+                     Console.Write("*");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
         }
 
     }
