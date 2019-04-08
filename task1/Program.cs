@@ -48,7 +48,8 @@ namespace task1
             //DrawFigures();
             //AnalyzeOfNumber();
             //CalculatorOfPossibleRouts();
-            OperationsWithNumbersBtwAB();
+            //OperationsWithNumbersBtwAB();
+            HowManyEvenCyfresInNumber();
             Console.ReadLine();
         }
 
@@ -559,6 +560,24 @@ namespace task1
             }
             Console.WriteLine($"Sum of numbers between {firstNumber} and {secondNumber} is {sum}");
             Console.WriteLine("Odd numbers are " + report);
+        }
+
+        public static void HowManyEvenCyfresInNumber()
+        {
+            Console.WriteLine("Input number");
+            string inputNumber = Console.ReadLine();
+            int testNumber = Convert.ToInt32(inputNumber);
+            int counter = 0;
+            int temp = testNumber;
+            for (int i = 0; i < inputNumber.Length; i++)
+            {
+                if((temp- temp/10*10)%2==0)
+                {
+                    counter++;
+                }
+                temp = temp / 10;
+            }
+            Console.WriteLine($"{counter} even cyfres in {testNumber}");
         }
     }
 
