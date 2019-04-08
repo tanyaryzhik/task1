@@ -47,7 +47,8 @@ namespace task1
             //Factorial();
             //DrawFigures();
             //AnalyzeOfNumber();
-            CalculatorOfPossibleRouts();
+            //CalculatorOfPossibleRouts();
+            OperationsWithNumbersBtwAB();
             Console.ReadLine();
         }
 
@@ -539,6 +540,26 @@ namespace task1
             Console.WriteLine($"For {numberOfClients} clients it's possible to create {result} ways of delivery route.");
         }
 
+        public static void OperationsWithNumbersBtwAB()
+        {
+            Console.WriteLine("Input two numbers, first number < second number");
+            Console.WriteLine("The first number is");
+            int firstNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("The second number is");
+            int secondNumber = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+            string report = "";
+            for (int i = firstNumber + 1; i < secondNumber; i++)
+            {
+                sum += i;
+                if (i%2!= 0)
+                {
+                    report += Convert.ToString(i) + ", ";
+                }
+            }
+            Console.WriteLine($"Sum of numbers between {firstNumber} and {secondNumber} is {sum}");
+            Console.WriteLine("Odd numbers are " + report);
+        }
     }
 
 }
