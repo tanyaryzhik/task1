@@ -45,7 +45,9 @@ namespace task1
             //Translator();
             //BonusCalculation();
             //Factorial();
-            DrawFigures();
+            //DrawFigures();
+            //AnalyzeOfNumber();
+            CalculatorOfPossibleRouts();
             Console.ReadLine();
         }
 
@@ -311,26 +313,137 @@ namespace task1
             int widthRectangular = Convert.ToInt32(Console.ReadLine());
             DrawRectangularFrame(heightRectangular, widthRectangular);
             DrawRectangular(heightRectangular, widthRectangular);
-            Console.WriteLine("Input number of symbols to draw right triangle");
-            int cathetus = Convert.ToInt32(Console.ReadLine());
-            DrawRightTriangularFrame(cathetus);
-            DrawRightTriangular(cathetus);
+            Console.WriteLine("Input number of symbols to draw triangles");
+            int triangleSide = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Right triangle");
+            DrawRightTriangularFrame(triangleSide);
+            DrawRightTriangular(triangleSide);
+            Console.WriteLine("Equilateral triangle");
+            DrawEquilateralTriangleFrame(triangleSide);
+
+
 
         }
 
-        private static void DrawRightTriangularFrame(int cathetus)
+        private static void AnalyzeOfNumber()
+        {
+            Console.WriteLine("Input number to analyze");
+            int testNumber = Convert.ToInt32(Console.ReadLine());
+            //
+            // string to aggregate report of analyze.
+            //
+            string report = "";
+
+            //
+            // Checking if number is positive or negative.
+            //
+            if (testNumber > 0)
+            {
+                report = "Number is positive.\n";
+            }
+            if (testNumber < 0)
+            {
+                report = "Number is negative.\nNumber isn't prime.\n";
+            }
+
+            //
+            // Checking if number is prime.
+            //
+            int counter = 0;
+            for (int i = 2; i <= testNumber; i++)
+            {
+                if (testNumber % i == 0)
+                {
+                    counter++;
+                }
+            }
+            if (counter == 1)
+            {
+                report = report + "Number is prime.\n";
+            }
+            if (counter > 1)
+            {
+                report = report + "Number isn't prime.\n";
+            }
+
+            //
+            // Finding number dividers.
+            //
+            if (testNumber % 2 == 0)
+            {
+                report = report + "Number is divided by 2.\n";
+            }
+            if (testNumber % 3 == 0)
+            {
+                report = report + "Number is divided by 3.\n";
+            }
+            if (testNumber % 5 == 0)
+            {
+                report = report + "Number is divided by 5.\n";
+            }
+            if (testNumber % 6 == 0)
+            {
+                report = report + "Number is divided by 6.\n";
+            }
+            if (testNumber % 9 == 0)
+            {
+                report = report + "Number is divided by 9.\n";
+            }
+
+            Console.WriteLine(report);
+        }
+
+        private static void DrawEquilateralTriangleFrame(int triangleSide)
+        {
+
+            for (int i = 0; i < triangleSide - 1; i++)
+            {
+                if (i == 0)
+                {
+                    for (int k = 0; k < triangleSide / 2; k++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.WriteLine("*");
+                }
+                else if (i == triangleSide - 2)
+                    DrawString(triangleSide);
+                else
+                {
+                    for (int k = 0; k < triangleSide / 2 - i - 1; k++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write("*");
+                    for (int k = i - 1; k < triangleSide; k++)
+                    {
+                        if (k == 0)
+                        {
+                            Console.WriteLine("*");
+                            continue;
+                        }
+                        else
+                            Console.Write(" ");
+                    }
+                    Console.WriteLine("*");
+                }
+
+            }
+        }
+
+        private static void DrawRightTriangularFrame(int side)
         {
             int hypotenuse;
-            for (int i = 0; i < cathetus-1; i++)
+            for (int i = 0; i < side - 1; i++)
             {
-                hypotenuse = i -1;
-                for (int k = 0; k < cathetus-1; k++)
+                hypotenuse = i - 1;
+                for (int k = 0; k < side - 1; k++)
                 {
-                    if (k==0)
+                    if (k == 0)
                     {
                         Console.Write("*");
                     }
-                    if (k==hypotenuse)
+                    if (k == hypotenuse)
                     {
                         Console.Write("*");
                         continue;
@@ -340,31 +453,31 @@ namespace task1
                         Console.Write(" ");
                     }
                 }
-                 Console.Write("\n");
+                Console.Write("\n");
             }
-            DrawString(cathetus);
+            DrawString(side);
         }
-        private static void DrawRightTriangular(int cathetus)
+        private static void DrawRightTriangular(int side)
         {
             int hypotenuse;
-            for (int i = 0; i < cathetus; i++)
+            for (int i = 0; i < side; i++)
             {
                 hypotenuse = i - 1;
-                for (int k = 0; k < cathetus - 1; k++)
+                for (int k = 0; k < side - 1; k++)
                 {
                     if (k == hypotenuse)
                     {
                         Console.Write("*");
                         continue;
                     }
-                    else if (k<hypotenuse)
+                    else if (k < hypotenuse)
                     {
                         Console.Write("*");
                     }
                 }
                 Console.Write("\n");
             }
-            DrawString(cathetus);
+            DrawString(side);
         }
 
         public static void DrawString(int number)
@@ -405,14 +518,26 @@ namespace task1
             {
                 for (int k = 0; k < width; k++)
                 {
-                     Console.Write("*");
+                    Console.Write("*");
                 }
                 Console.Write("\n");
             }
             Console.Write("\n");
         }
 
-
+        public static void CalculatorOfPossibleRouts()
+        {
+            Console.WriteLine("Input number of clients");
+            int numberOfClients = Convert.ToInt32(Console.ReadLine());
+            int i = 1;
+            int result = 1;
+            do
+            {
+                result *= i;
+                i++;
+            } while (i <= numberOfClients);
+            Console.WriteLine($"For {numberOfClients} clients it's possible to create {result} ways of delivery route.");
+        }
 
     }
 
