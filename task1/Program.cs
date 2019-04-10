@@ -57,7 +57,8 @@ namespace task1
             //NumberInvertion();
             //NumberToDegree();
             //DeleteDigitFromNumber();
-            GetMaxDigitInNumber();
+            //GetMaxDigitInNumber();
+            Syrakusa();
             Console.ReadLine();
         }
 
@@ -777,11 +778,31 @@ namespace task1
             for (int i = 0; i < numStr.Length; i++)
             {
                 unit = temp - temp / 10 * 10;
-                if(max < unit)
+                if (max < unit)
                 { max = unit; }
                 temp = temp / 10;
             }
             Console.WriteLine($"Max number is {max}");
+        }
+
+        public static void Syrakusa()
+        {
+            Console.WriteLine("Input number");
+            string numStr = Console.ReadLine();
+            int number = Convert.ToInt32(numStr);
+            int temp = number;
+            do
+            {
+                if (temp%2 == 0)
+                {
+                    temp = temp / 2;
+                }
+                else
+                {
+                    temp = (temp * 3 + 1) / 2;
+                }
+            } while (temp > 1);
+            Console.WriteLine($"Result number is {temp}");
         }
     }
 
