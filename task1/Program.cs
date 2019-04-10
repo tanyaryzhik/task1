@@ -52,7 +52,8 @@ namespace task1
             //HowManyEvenCyfresInNumber();
             //GetArithmeticalMean();
             //Skier();
-            MultiplyTwoNumbers();
+            //MultiplyTwoNumbers();
+            SquaresBeforeGivenNumber();
             Console.ReadLine();
         }
 
@@ -645,6 +646,16 @@ namespace task1
                 result += secondNumber;
             }
             return result;
+        }
+
+        public static void SquaresBeforeGivenNumber()
+        {
+            Console.WriteLine("Input number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i < number; i++)
+            {
+                Console.WriteLine($"Square of {i} = {i * i}");
+            }
         }
     }
 
