@@ -53,7 +53,8 @@ namespace task1
             //GetArithmeticalMean();
             //Skier();
             //MultiplyTwoNumbers();
-            SquaresBeforeGivenNumber();
+            //SquaresBeforeGivenNumber();
+            NumberInvertion();
             Console.ReadLine();
         }
 
@@ -656,6 +657,42 @@ namespace task1
             {
                 Console.WriteLine($"Square of {i} = {i * i}");
             }
+        }
+
+        public static void FibonacciLessThanGivenNumber()
+        {
+            Console.WriteLine("Input number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int fibonacci = 0;
+            for (int i = 0; i > 0; i++)
+            {
+                if (i == 0)
+                { fibonacci = 0; }
+                if (i == 1 || i == 2)
+                { fibonacci = 1; }
+                else
+                { }
+                Console.WriteLine($"F{i} = {fibonacci}");
+            }
+        }
+
+        public static void NumberInvertion()
+        {
+            Console.WriteLine("Input number");
+            string inputNumber = Console.ReadLine();
+            int number = Convert.ToInt32(inputNumber);
+            int temp = number;
+            int digit = 0;
+            int invertedNumber = 0;
+            string invertedNumStr = "";
+            for (int i = 0; i < inputNumber.Length; i++)
+            {
+                digit =temp - temp / 10 * 10;
+                invertedNumStr += digit;
+                temp = temp / 10;
+            }
+            invertedNumber = Convert.ToInt32(invertedNumStr);
+            Console.WriteLine($"{number} inverts to {invertedNumber}");
         }
     }
 
