@@ -53,9 +53,9 @@ namespace task1
             //GetArithmeticalMean();
             //Skier();
             //MultiplyTwoNumbers();
-            //SquaresBeforeGivenNumber();
+            SquaresBeforeGivenNumber();
             //NumberInvertion();
-            NumberToDegree();
+            //NumberToDegree();
             Console.ReadLine();
         }
 
@@ -654,9 +654,14 @@ namespace task1
         {
             Console.WriteLine("Input number");
             int number = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i < number; i++)
+            for (int i = 1; i >=1; i++)
             {
-                Console.WriteLine($"Square of {i} = {i * i}");
+                if (i * i <= number)
+                {
+                    Console.WriteLine($"Square of {i} = {i * i}");
+                }
+                else
+                    break;
             }
         }
 
@@ -721,6 +726,11 @@ namespace task1
                 }
             }
             Console.WriteLine($"Number {number} to {degree} degree is {result}");
+        }
+
+        public static void DeleteDigitFromNumber()
+        {
+
         }
     }
 
