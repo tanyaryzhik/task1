@@ -692,6 +692,14 @@ namespace task1
                 temp = temp / 10;
             }
             invertedNumber = Convert.ToInt32(invertedNumStr);
+            temp = invertedNumber;
+            Console.WriteLine($"Number {number} consists of");
+            for (int i = 0; i < inputNumber.Length; i++)
+            {
+                digit = temp - temp / 10 * 10;
+                Console.WriteLine(digit);
+                temp = temp / 10;
+            }
             Console.WriteLine($"{number} inverts to {invertedNumber}");
         }
     }
