@@ -58,7 +58,8 @@ namespace task1
             //NumberToDegree();
             //DeleteDigitFromNumber();
             //GetMaxDigitInNumber();
-            Syrakusa();
+            //Syrakusa();
+            SumOfRow();
             Console.ReadLine();
         }
 
@@ -793,7 +794,7 @@ namespace task1
             int temp = number;
             do
             {
-                if (temp%2 == 0)
+                if (temp % 2 == 0)
                 {
                     temp = temp / 2;
                 }
@@ -803,6 +804,28 @@ namespace task1
                 }
             } while (temp > 1);
             Console.WriteLine($"Result number is {temp}");
+        }
+
+        public static void SumOfRow()
+        {
+            Console.WriteLine("Input number of addends of row");
+            string numStr = Console.ReadLine();
+            int number = Convert.ToInt32(numStr);
+            double sum = 0.0;
+            int twoPowered = 1;
+            for (int i = 1; i <= number; i++)
+            {
+                twoPowered = twoPowered * 2;
+                if (i % 2 == 0)
+                {
+                    sum = sum - (double)i/twoPowered;
+                }
+                if (i % 2 != 0)
+                {
+                    sum = sum + (double)i/twoPowered;
+                }
+            }
+            Console.WriteLine(sum);
         }
     }
 
