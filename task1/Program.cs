@@ -49,7 +49,8 @@ namespace task1
             //AnalyzeOfNumber();
             //CalculatorOfPossibleRouts();
             //OperationsWithNumbersBtwAB();
-            HowManyEvenCyfresInNumber();
+            //HowManyEvenCyfresInNumber();
+            GetArithmeticalMean();
             Console.ReadLine();
         }
 
@@ -578,6 +579,23 @@ namespace task1
                 temp = temp / 10;
             }
             Console.WriteLine($"{counter} even cyfres in {testNumber}");
+        }
+
+        public static void GetArithmeticalMean()
+        {
+            Console.WriteLine("Input lower number");
+            int lowerNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input higher number");
+            int higherNumber = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+            int count = 0;
+            for (int i = lowerNumber; i <= higherNumber; i++)
+            {
+                sum += i;
+                count++;
+            }
+            double mean = (double)sum / count;
+            Console.WriteLine($"Arithmetical mean of numbers from {lowerNumber} to {higherNumber} is {mean}");
         }
     }
 
