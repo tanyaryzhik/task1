@@ -56,7 +56,8 @@ namespace task1
             //SquaresBeforeGivenNumber();
             //NumberInvertion();
             //NumberToDegree();
-            DeleteDigitFromNumber();
+            //DeleteDigitFromNumber();
+            GetMaxDigitInNumber();
             Console.ReadLine();
         }
 
@@ -763,6 +764,24 @@ namespace task1
                 temp = temp / 10;
             }
             Console.WriteLine(resultNumberStr);
+        }
+
+        public static void GetMaxDigitInNumber()
+        {
+            Console.WriteLine("Input number");
+            string numStr = Console.ReadLine();
+            int number = Convert.ToInt32(numStr);
+            int unit = 0;
+            int temp = number;
+            int max = 0;
+            for (int i = 0; i < numStr.Length; i++)
+            {
+                unit = temp - temp / 10 * 10;
+                if(max < unit)
+                { max = unit; }
+                temp = temp / 10;
+            }
+            Console.WriteLine($"Max number is {max}");
         }
     }
 
