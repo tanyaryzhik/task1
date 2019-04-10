@@ -54,7 +54,8 @@ namespace task1
             //Skier();
             //MultiplyTwoNumbers();
             //SquaresBeforeGivenNumber();
-            NumberInvertion();
+            //NumberInvertion();
+            NumberToDegree();
             Console.ReadLine();
         }
 
@@ -687,7 +688,7 @@ namespace task1
             string invertedNumStr = "";
             for (int i = 0; i < inputNumber.Length; i++)
             {
-                digit =temp - temp / 10 * 10;
+                digit = temp - temp / 10 * 10;
                 invertedNumStr += digit;
                 temp = temp / 10;
             }
@@ -701,6 +702,25 @@ namespace task1
                 temp = temp / 10;
             }
             Console.WriteLine($"{number} inverts to {invertedNumber}");
+        }
+
+        public static void NumberToDegree()
+        {
+            Console.WriteLine("Input number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input degree");
+            int degree = Convert.ToInt32(Console.ReadLine());
+            int result = 1;
+            for (int i = 0; i <= degree; i++)
+            {
+                if (i == 0)
+                { result = 1; }
+                else
+                {
+                    result *= number;
+                }
+            }
+            Console.WriteLine($"Number {number} to {degree} degree is {result}");
         }
     }
 
