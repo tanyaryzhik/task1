@@ -55,7 +55,8 @@ namespace task1
             //MultiplyTwoNumbers();
             //SquaresBeforeGivenNumber();
             //NumberInvertion();
-            NumberToDegree();
+            //NumberToDegree();
+            DeleteDigitFromNumber();
             Console.ReadLine();
         }
 
@@ -654,7 +655,7 @@ namespace task1
         {
             Console.WriteLine("Input number");
             int number = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i >=1; i++)
+            for (int i = 1; i >= 1; i++)
             {
                 if (i * i <= number)
                 {
@@ -730,12 +731,38 @@ namespace task1
                 Console.WriteLine($"Number {number} to {degree} degree is 1/{result}");
             }
             else
-            Console.WriteLine($"Number {number} to {degree} degree is {result}");
+                Console.WriteLine($"Number {number} to {degree} degree is {result}");
         }
 
         public static void DeleteDigitFromNumber()
         {
-
+            Console.WriteLine("Input number");
+            string originNumStr = Console.ReadLine();
+            int originNum = Convert.ToInt32(originNumStr);
+            Console.WriteLine("Input digit to delete");
+            string digitStr = Console.ReadLine();
+            int digitNum = Convert.ToInt32(digitStr);
+            int temp = originNum;
+            int unit = 0;
+            string tempNumberStr = "";
+            string resultNumberStr = "";
+            for (int i = 0; i < originNumStr.Length; i++)
+            {
+                unit = temp - temp / 10 * 10;
+                if (unit != digitNum)
+                {
+                    tempNumberStr += unit;
+                }
+                temp = temp / 10;
+            }
+            temp = Convert.ToInt32(tempNumberStr);
+            for (int i = 0; i < tempNumberStr.Length; i++)
+            {
+                unit = temp - temp / 10 * 10;
+                resultNumberStr += unit;
+                temp = temp / 10;
+            }
+            Console.WriteLine(resultNumberStr);
         }
     }
 
