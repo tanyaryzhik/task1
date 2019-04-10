@@ -53,9 +53,9 @@ namespace task1
             //GetArithmeticalMean();
             //Skier();
             //MultiplyTwoNumbers();
-            SquaresBeforeGivenNumber();
+            //SquaresBeforeGivenNumber();
             //NumberInvertion();
-            //NumberToDegree();
+            NumberToDegree();
             Console.ReadLine();
         }
 
@@ -716,7 +716,7 @@ namespace task1
             Console.WriteLine("Input degree");
             int degree = Convert.ToInt32(Console.ReadLine());
             int result = 1;
-            for (int i = 0; i <= degree; i++)
+            for (int i = 0; i <= Math.Abs(degree); i++)
             {
                 if (i == 0)
                 { result = 1; }
@@ -725,6 +725,11 @@ namespace task1
                     result *= number;
                 }
             }
+            if (degree < 0)
+            {
+                Console.WriteLine($"Number {number} to {degree} degree is 1/{result}");
+            }
+            else
             Console.WriteLine($"Number {number} to {degree} degree is {result}");
         }
 
