@@ -51,7 +51,8 @@ namespace task1
             //OperationsWithNumbersBtwAB();
             //HowManyEvenCyfresInNumber();
             //GetArithmeticalMean();
-            Skier();
+            //Skier();
+            MultiplyTwoNumbers();
             Console.ReadLine();
         }
 
@@ -555,7 +556,7 @@ namespace task1
             for (int i = firstNumber + 1; i < secondNumber; i++)
             {
                 sum += i;
-                if (i%2!= 0)
+                if (i % 2 != 0)
                 {
                     report += Convert.ToString(i) + ", ";
                 }
@@ -573,7 +574,7 @@ namespace task1
             int temp = testNumber;
             for (int i = 0; i < inputNumber.Length; i++)
             {
-                if((temp- temp/10*10)%2==0)
+                if ((temp - temp / 10 * 10) % 2 == 0)
                 {
                     counter++;
                 }
@@ -610,10 +611,40 @@ namespace task1
                 if (way >= 100)
                 {
                     days = i;
-                    break;
+                    break
+;
                 }
             }
             Console.WriteLine($"Skier will run more than 100 km on the {days} day");
+        }
+
+        public static void MultiplyTwoNumbers()
+        {
+            Console.WriteLine("Input first number");
+            int firstNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input second number");
+            int secondNumber = Convert.ToInt32(Console.ReadLine());
+            int multiplication = 0;
+            if ((firstNumber > 0 && secondNumber > 0) || (firstNumber < 0 && secondNumber < 0))
+            {
+                multiplication = Multiply(Math.Abs(firstNumber), Math.Abs(secondNumber));
+            }
+            if ((firstNumber > 0 && secondNumber < 0) || (firstNumber < 0 && secondNumber > 0))
+            {
+                multiplication = -Multiply(Math.Abs(firstNumber), Math.Abs(secondNumber));
+            }
+            Console.WriteLine($"{firstNumber} * {secondNumber} = {multiplication}");
+
+        }
+
+        private static int Multiply(int firstNumber, int secondNumber)
+        {
+            int result = 0;
+            for (int i = 1; i <= firstNumber; i++)
+            {
+                result += secondNumber;
+            }
+            return result;
         }
     }
 
