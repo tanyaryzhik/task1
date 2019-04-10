@@ -50,7 +50,8 @@ namespace task1
             //CalculatorOfPossibleRouts();
             //OperationsWithNumbersBtwAB();
             //HowManyEvenCyfresInNumber();
-            GetArithmeticalMean();
+            //GetArithmeticalMean();
+            Skier();
             Console.ReadLine();
         }
 
@@ -594,8 +595,25 @@ namespace task1
                 sum += i;
                 count++;
             }
-            double mean = (double)sum / count;
+            double mean = (double
+)sum / count;
             Console.WriteLine($"Arithmetical mean of numbers from {lowerNumber} to {higherNumber} is {mean}");
+        }
+
+        public static void Skier()
+        {
+            double way = 10.0;
+            int days = 0;
+            for (int i = 2; i > 1; i++)
+            {
+                way = way + way * 1.1;
+                if (way >= 100)
+                {
+                    days = i;
+                    break;
+                }
+            }
+            Console.WriteLine($"Skier will run more than 100 km on the {days} day");
         }
     }
 
