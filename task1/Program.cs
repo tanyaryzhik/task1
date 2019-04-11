@@ -59,7 +59,8 @@ namespace task1
             //DeleteDigitFromNumber();
             //GetMaxDigitInNumber();
             //Syrakusa();
-            SumOfRow();
+            //SumOfRow();
+            GuessNumber();
             Console.ReadLine();
         }
 
@@ -826,6 +827,28 @@ namespace task1
                 }
             }
             Console.WriteLine(sum);
+        }
+
+        public static void GuessNumber()
+        {
+            Console.WriteLine("Try to guess number chosen by computer from 0 to 100");
+            int random = new Random().Next(100);
+            int userNumber = 0;
+            do
+            {
+                userNumber = 0;
+                Console.WriteLine("Input number");
+                userNumber = int.Parse(Console.ReadLine());
+                if (userNumber > random)
+                    Console.WriteLine($"{userNumber} > computre's number");
+                else if (userNumber < random)
+                    Console.WriteLine($"{userNumber} < computre's number");
+                else if (userNumber == random)
+                {
+                    Console.WriteLine($"Yes, it's {random}. Congratulations!!!");
+                    break;
+                }
+            } while (userNumber!=random);
         }
     }
 
