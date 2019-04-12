@@ -60,7 +60,8 @@ namespace task1
             //GetMaxDigitInNumber();
             //Syrakusa();
             //SumOfRow();
-            GuessNumber();
+            //GuessNumber();
+            FibonacciLessThanGivenNumber();
             Console.ReadLine();
         }
 
@@ -674,17 +675,22 @@ namespace task1
         {
             Console.WriteLine("Input number");
             int number = Convert.ToInt32(Console.ReadLine());
-            int fibonacci = 0;
-            for (int i = 0; i > 0; i++)
+            int fib1 = 0;
+            int fib2 = 1;
+            int sum = 0;
+            int i = 2;
+            Console.WriteLine($"F0 = 0");
+            Console.WriteLine($"F1 = 1");
+            while (i <= number)
             {
-                if (i == 0)
-                { fibonacci = 0; }
-                if (i == 1 || i == 2)
-                { fibonacci = 1; }
-                else
-                { }
-                Console.WriteLine($"F{i} = {fibonacci}");
+                sum = fib1 + fib2;
+                Console.WriteLine($"F{i} = {sum}");
+                fib1 = fib2;
+                fib2 = sum;
+                i++;
             }
+
+            
         }
 
         public static void NumberInvertion()
@@ -819,11 +825,11 @@ namespace task1
                 twoPowered = twoPowered * 2;
                 if (i % 2 == 0)
                 {
-                    sum = sum - (double)i/twoPowered;
+                    sum = sum - (double)i / twoPowered;
                 }
                 if (i % 2 != 0)
                 {
-                    sum = sum + (double)i/twoPowered;
+                    sum = sum + (double)i / twoPowered;
                 }
             }
             Console.WriteLine(sum);
@@ -836,7 +842,6 @@ namespace task1
             int userNumber = 0;
             do
             {
-                userNumber = 0;
                 Console.WriteLine("Input number");
                 userNumber = int.Parse(Console.ReadLine());
                 if (userNumber > random)
@@ -848,8 +853,9 @@ namespace task1
                     Console.WriteLine($"Yes, it's {random}. Congratulations!!!");
                     break;
                 }
-            } while (userNumber!=random);
+            } while (userNumber != random);
         }
+
     }
 
 }
