@@ -36,7 +36,10 @@ namespace task1
             //Console.WriteLine(str1);
             //Console.WriteLine(str2);
             //Console.WriteLine(str3);
-            arrayAnalyze();
+            //arrayAnalyze();
+            //DeleteDublicates();
+            //GetIndexesOfElementsInRange();
+            GetElementsMoreThanMean();
             Console.ReadLine();
         }
 
@@ -60,9 +63,6 @@ namespace task1
                 Console.WriteLine(array[i]);
             }
 
-            //
-            // Min and Max
-            //
             int min = 100;
             int max = 0;
             int sum = 0;
@@ -77,7 +77,7 @@ namespace task1
                     {
                         max = array[i];
                     }
-                    
+
                     if (array[i] < array[k] && array[i] < min)
                     {
                         min = array[i];
@@ -95,8 +95,90 @@ namespace task1
             }
             mean = (double)sum / array.Length;
             Console.WriteLine($"Max element {max}\nMin element {min}\nOdd numbers {oddNumbers}\nSum {sum}\nArithmetical mean {mean}");
+        }
 
-        
+        public static void DeleteDublicates()
+        {
+            Console.WriteLine("Enter number of elements");
+            int arraySize = Convert.ToInt32(Console.ReadLine());
+
+            var random = new Random();
+            int[] array = new int[arraySize];
+            for (int i = 0; i < arraySize; i++)
+            {
+                array[i] = random.Next(10);
+                Console.WriteLine(array[i]);
+            }
+
+            int counterDublicates = 0;
+            int[] indexDublicates = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int k = i + 1; k < array.Length; k++)
+
+                {
+                    if (array[i] == array[k])
+                    {
+                        indexDublicates[i] = i;
+                        counterDublicates++;
+                    }
+                }
+            }
+            int arrSizeCleared = array.Length - counterDublicates;
+            int[] arrayCleared = new int[arrSizeCleared];
+
+        }
+
+        public static void GetIndexesOfElementsInRange()
+        {
+            Console.WriteLine("Enter number of elements");
+            int arraySize = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter max value less than 100");
+            int max = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter min value more than 0");
+            int min = Convert.ToInt32(Console.ReadLine());
+
+            var random = new Random();
+            int[] array = new int[arraySize];
+            for (int i = 0; i < arraySize; i++)
+            {
+                array[i] = random.Next(100);
+                Console.WriteLine(array[i]);
+            }
+
+            for(int i = 0; i < array.Length; i++)
+            {
+                if (array[i]>=min && array[i]<=max)
+                {
+                    Console.WriteLine($"Element {array[i]} with index {i}");
+                }
+            }
+        }
+
+        public static void GetElementsMoreThanMean()
+        {
+            var random = new Random();
+            int[] array = new int[10];
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(100);
+                Console.WriteLine(array[i]);
+            }
+
+            int sum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+            double mean = (double)sum / array.Length;
+            Console.WriteLine($"Mean {mean}");
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i]> mean)
+                {
+                    Console.WriteLine(array[i]);
+                }
+            }
         }
     }
 }
