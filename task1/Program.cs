@@ -45,7 +45,7 @@ namespace task1
             //Translator();
             //BonusCalculation();
             //Factorial();
-            //DrawFigures();
+            DrawFigures();
             //AnalyzeOfNumber();
             //CalculatorOfPossibleRouts();
             //OperationsWithNumbersBtwAB();
@@ -61,7 +61,7 @@ namespace task1
             //Syrakusa();
             //SumOfRow();
             //GuessNumber();
-            FibonacciLessThanGivenNumber();
+            //FibonacciLessThanGivenNumber();
             Console.ReadLine();
         }
 
