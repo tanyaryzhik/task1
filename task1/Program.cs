@@ -49,7 +49,7 @@ namespace task1
             decimal square = Pi * r * r;
             return square;
         }
-
+        
         public static void arrayAnalyze()
         {
             Console.WriteLine("Enter number of elements");
@@ -177,6 +177,18 @@ namespace task1
                 if (array[i]> mean)
                 {
                     Console.WriteLine(array[i]);
+                }
+            }
+        }
+
+        public static int[] MyReverse(int[] array)
+        {
+            int[] revArray = new int[array.Length];
+            for (int i = 0; i< array.Length; i++)
+            {
+                for (int k = array.Length-1; k < array.Length; k--)
+                {
+
                 }
             }
         }
