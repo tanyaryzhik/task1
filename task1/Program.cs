@@ -39,7 +39,8 @@ namespace task1
             //arrayAnalyze();
             //DeleteDublicates();
             //GetIndexesOfElementsInRange();
-            GetElementsMoreThanMean();
+            //GetElementsMoreThanMean();
+            UnpackArray();
             Console.ReadLine();
         }
 
@@ -49,7 +50,7 @@ namespace task1
             decimal square = Pi * r * r;
             return square;
         }
-        
+
         public static void arrayAnalyze()
         {
             Console.WriteLine("Enter number of elements");
@@ -146,9 +147,9 @@ namespace task1
                 Console.WriteLine(array[i]);
             }
 
-            for(int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                if (array[i]>=min && array[i]<=max)
+                if (array[i] >= min && array[i] <= max)
                 {
                     Console.WriteLine($"Element {array[i]} with index {i}");
                 }
@@ -174,23 +175,70 @@ namespace task1
             Console.WriteLine($"Mean {mean}");
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i]> mean)
+                if (array[i] > mean)
                 {
                     Console.WriteLine(array[i]);
                 }
             }
         }
 
-        public static int[] MyReverse(int[] array)
-        {
-            int[] revArray = new int[array.Length];
-            for (int i = 0; i< array.Length; i++)
-            {
-                for (int k = array.Length-1; k < array.Length; k--)
-                {
+        // public static int[] MyReverse(int[] array)
+        // {
+        //     int[] revArray = new int[array.Length];
+        //     for (int i = 0; i< array.Length; i++)
+        //     {
+        //         for (int k = array.Length-1; k < array.Length; k--)
+        //         {
 
-                }
+        //         }
+        //     }
+        // }
+
+        public static void UnpackArray()
+        {
+            //
+            // User enters array data.
+            //
+            Console.WriteLine("Enter number of elements");
+            int sizeArr = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter elements through space");
+            string inputElements = Console.ReadLine();
+
+            //
+            // Split string to get elements.
+            //
+            int[] array = new int[sizeArr];
+            string[] splitedArray = inputElements.Split(' ');
+            for (int i = 0; i < sizeArr; i++)
+            {
+                array[i] = Convert.ToInt32(splitedArray[i]);
             }
+
+            //
+            // Build unpacked array string.
+            //
+            StringBuilder resultConstr = new StringBuilder();
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (i == 0 && array[i] == 0)
+                    continue;
+                if (i % 2 != 0)
+                    resultConstr.Append(AddElements("1", array[i]));
+                if (i % 2 == 0)
+                    resultConstr.Append(AddElements("0", array[i]));
+            }
+
+            Console.WriteLine(resultConstr.ToString());
+        }
+
+        public static string AddElements(string element, int times)
+        {
+            string result = string.Empty;
+            for (int i = 0; i < times; i++)
+            {
+                result += element;
+            }
+            return result;
         }
     }
 }
