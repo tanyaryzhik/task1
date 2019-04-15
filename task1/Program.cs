@@ -87,10 +87,7 @@ namespace task1
             int b = Convert.ToInt32(Console.ReadLine());
             int c = Convert.ToInt32(Console.ReadLine());
 
-            if ((b < a && b > c) || (b > a && b < c))
-                return true;
-            else
-                return false;
+            return (b < a && b > c) || (b > a && b < c);
         }
 
         public static void IsNumberOddAndThreeDigit()
@@ -158,6 +155,7 @@ namespace task1
 
                 Console.WriteLine("Input first number");
                 success = Int32.TryParse(Console.ReadLine(), out operand1);
+
                 if (success == false)
                     continue;
                 Console.WriteLine("Input second number");
@@ -168,9 +166,6 @@ namespace task1
                 sign = Console.ReadLine();
                 if (sign != "+" && sign != "-" && sign != "*" && sign != "/")
                     success = false;
-
-
-
             } while (success == false);
 
             int result = 0;
@@ -180,12 +175,15 @@ namespace task1
                 case "+":
                     result = operand1 + operand2;
                     break;
+
                 case "-":
                     result = operand1 - operand2;
                     break;
+
                 case "*":
                     result = operand1 * operand2;
                     break;
+
                 case "/":
                     if (operand2 == 0)
                     {
@@ -193,8 +191,9 @@ namespace task1
                         return;
                     }
                     else
-                    { result = operand1 / operand2; }
+                        result = operand1 / operand2;
                     break;
+
                 default:
                     break;
             }
@@ -209,11 +208,11 @@ namespace task1
             {
                 Console.WriteLine($"{number} is in area [0-14]");
             }
-            if (number >= 15 && number <= 35)
+            else if (number >= 15 && number <= 35)
             {
                 Console.WriteLine($"{number} is in area [15-35]");
             }
-            if (number >= 36 && number <= 50)
+            else if (number >= 36 && number <= 50)
             {
                 Console.WriteLine($"{number} is in area [36-50]");
             }
@@ -227,39 +226,50 @@ namespace task1
         {
             Console.WriteLine("Input russian word");
             string inputString = Console.ReadLine();
-            string translation = "";
+            string translation = string.Empty;
+
             switch (inputString)
             {
                 case "дождь":
                     translation = "rain";
                     break;
+
                 case "снег":
                     translation = "snow";
                     break;
+
                 case "ясно":
                     translation = "sunny";
                     break;
+
                 case "туман":
                     translation = "mist";
                     break;
+
                 case "ветер":
                     translation = "wind";
                     break;
+
                 case "штиль":
                     translation = "still";
                     break;
+
                 case "шторм":
                     translation = "storm";
                     break;
+
                 case "торнадо":
                     translation = "tornado";
                     break;
+
                 case "ливень":
                     translation = "shower";
                     break;
+
                 case "облака":
                     translation = "cloud";
                     break;
+
                 default:
                     Console.WriteLine("This word has no translation in this app");
                     return;
@@ -276,29 +286,17 @@ namespace task1
             double bonus = 0;
 
             if (stage < 5)
-            {
                 bonus = 0.1;
-            }
-            if (stage >= 5 && stage < 10)
-            {
+            else if (stage >= 5 && stage < 10)
                 bonus = 0.15;
-            }
-            if (stage >= 10 && stage < 15)
-            {
+            else if (stage >= 10 && stage < 15)
                 bonus = 0.25;
-            }
-            if (stage >= 15 && stage < 20)
-            {
+            else if (stage >= 15 && stage < 20)
                 bonus = 0.35;
-            }
-            if (stage >= 20 && stage < 25)
-            {
+            else if (stage >= 20 && stage < 25)
                 bonus = 0.45;
-            }
-            if (stage >= 25)
-            {
+            else if (stage >= 25)
                 bonus = 0.5;
-            }
             double result = salary + bonus * salary;
             Console.WriteLine($"Salary {salary} and stage {stage}, bonus is {bonus * salary} and result is {result}");
         }
@@ -334,31 +332,25 @@ namespace task1
             DrawRightTriangular(triangleSide);
             Console.WriteLine("Equilateral triangle");
             DrawEquilateralTriangleFrame(triangleSide);
-
-
-
         }
 
         private static void AnalyzeOfNumber()
         {
             Console.WriteLine("Input number to analyze");
             int testNumber = Convert.ToInt32(Console.ReadLine());
+
             //
-            // string to aggregate report of analyze.
+            // String to aggregate report of analyze.
             //
-            string report = "";
+            string report = string.Empty;
 
             //
             // Checking if number is positive or negative.
             //
             if (testNumber > 0)
-            {
                 report = "Number is positive.\n";
-            }
-            if (testNumber < 0)
-            {
+            else if (testNumber < 0)
                 report = "Number is negative.\nNumber isn't prime.\n";
-            }
 
             //
             // Checking if number is prime.
@@ -372,36 +364,32 @@ namespace task1
                 }
             }
             if (counter == 1)
-            {
-                report = report + "Number is prime.\n";
-            }
-            if (counter > 1)
-            {
-                report = report + "Number isn't prime.\n";
-            }
+                report += "Number is prime.\n";
+            else if (counter > 1)
+                report += "Number isn't prime.\n";
 
             //
             // Finding number dividers.
             //
             if (testNumber % 2 == 0)
             {
-                report = report + "Number is divided by 2.\n";
+                report += "Number is divided by 2.\n";
             }
             if (testNumber % 3 == 0)
             {
-                report = report + "Number is divided by 3.\n";
+                report += "Number is divided by 3.\n";
             }
             if (testNumber % 5 == 0)
             {
-                report = report + "Number is divided by 5.\n";
+                report += "Number is divided by 5.\n";
             }
             if (testNumber % 6 == 0)
             {
-                report = report + "Number is divided by 6.\n";
+                report += "Number is divided by 6.\n";
             }
             if (testNumber % 9 == 0)
             {
-                report = report + "Number is divided by 9.\n";
+                report += "Number is divided by 9.\n";
             }
 
             Console.WriteLine(report);
@@ -409,7 +397,6 @@ namespace task1
 
         private static void DrawEquilateralTriangleFrame(int triangleSide)
         {
-
             for (int i = 0; i < triangleSide - 1; i++)
             {
                 if (i == 0)
@@ -567,7 +554,7 @@ namespace task1
                 sum += i;
                 if (i % 2 != 0)
                 {
-                    report += Convert.ToString(i) + ", ";
+                    report += i + ", ";
                 }
             }
             Console.WriteLine($"Sum of numbers between {firstNumber} and {secondNumber} is {sum}");
@@ -605,8 +592,7 @@ namespace task1
                 sum += i;
                 count++;
             }
-            double mean = (double
-)sum / count;
+            double mean = (double)sum / count;
             Console.WriteLine($"Arithmetical mean of numbers from {lowerNumber} to {higherNumber} is {mean}");
         }
 
@@ -620,8 +606,7 @@ namespace task1
                 if (way >= 100)
                 {
                     days = i;
-                    break
-;
+                    break;
                 }
             }
             Console.WriteLine($"Skier will run more than 100 km on the {days} day");
@@ -643,7 +628,6 @@ namespace task1
                 multiplication = -Multiply(Math.Abs(firstNumber), Math.Abs(secondNumber));
             }
             Console.WriteLine($"{firstNumber} * {secondNumber} = {multiplication}");
-
         }
 
         private static int Multiply(int firstNumber, int secondNumber)
@@ -689,8 +673,6 @@ namespace task1
                 fib2 = sum;
                 i++;
             }
-
-            
         }
 
         public static void NumberInvertion()
@@ -730,16 +712,12 @@ namespace task1
             for (int i = 0; i <= Math.Abs(degree); i++)
             {
                 if (i == 0)
-                { result = 1; }
+                    result = 1;
                 else
-                {
                     result *= number;
-                }
             }
             if (degree < 0)
-            {
                 Console.WriteLine($"Number {number} to {degree} degree is 1/{result}");
-            }
             else
                 Console.WriteLine($"Number {number} to {degree} degree is {result}");
         }
@@ -754,8 +732,8 @@ namespace task1
             int digitNum = Convert.ToInt32(digitStr);
             int temp = originNum;
             int unit = 0;
-            string tempNumberStr = "";
-            string resultNumberStr = "";
+            string tempNumberStr = string.Empty;
+            string resultNumberStr = string.Empty;
             for (int i = 0; i < originNumStr.Length; i++)
             {
                 unit = temp - temp / 10 * 10;
@@ -787,7 +765,7 @@ namespace task1
             {
                 unit = temp - temp / 10 * 10;
                 if (max < unit)
-                { max = unit; }
+                    max = unit;
                 temp = temp / 10;
             }
             Console.WriteLine($"Max number is {max}");
@@ -802,13 +780,9 @@ namespace task1
             do
             {
                 if (temp % 2 == 0)
-                {
                     temp = temp / 2;
-                }
                 else
-                {
                     temp = (temp * 3 + 1) / 2;
-                }
             } while (temp > 1);
             Console.WriteLine($"Result number is {temp}");
         }
