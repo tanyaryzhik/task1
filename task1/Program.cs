@@ -40,7 +40,8 @@ namespace task1
             //DeleteDublicates();
             //GetIndexesOfElementsInRange();
             //GetElementsMoreThanMean();
-            UnpackArray();
+            //UnpackArray();
+            PerfectNumber();
             Console.ReadLine();
         }
 
@@ -239,6 +240,21 @@ namespace task1
                 result += element;
             }
             return result;
+        }
+
+        public static void PerfectNumber()
+        {
+            for (int k = 2; k <= 1000; k++)
+            {
+                int sum = 1;
+                for (int i = 2; i < k; i++)
+                {
+                    if (k % i == 0)
+                        sum += i;
+                }
+                if (sum == k)
+                    Console.WriteLine($"{k} is perfect");
+            }
         }
     }
 }
