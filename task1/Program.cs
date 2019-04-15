@@ -37,11 +37,11 @@ namespace task1
             //Console.WriteLine(str2);
             //Console.WriteLine(str3);
             //arrayAnalyze();
-            //DeleteDublicates();
+            DeleteDuplicates();
             //GetIndexesOfElementsInRange();
             //GetElementsMoreThanMean();
             //UnpackArray();
-            PerfectNumber();
+            //PerfectNumber();
             Console.ReadLine();
         }
 
@@ -99,7 +99,7 @@ namespace task1
             Console.WriteLine($"Max element {max}\nMin element {min}\nOdd numbers {oddNumbers}\nSum {sum}\nArithmetical mean {mean}");
         }
 
-        public static void DeleteDublicates()
+        public static void DeleteDuplicates()
         {
             Console.WriteLine("Enter number of elements");
             int arraySize = Convert.ToInt32(Console.ReadLine());
@@ -108,27 +108,45 @@ namespace task1
             int[] array = new int[arraySize];
             for (int i = 0; i < arraySize; i++)
             {
-                array[i] = random.Next(10);
+                array[i] = random.Next(1, 10);
                 Console.WriteLine(array[i]);
             }
 
-            int counterDublicates = 0;
-            int[] indexDublicates = new int[array.Length];
-            for (int i = 0; i < array.Length; i++)
+            int position = 1;
+            int[] arrayWithoutDupes = new int[arraySize];
+            arrayWithoutDupes[0] = array[0];
+            bool isDuplicate = false;
+            for (int i = 1; i < arraySize; i++)
             {
-                for (int k = i + 1; k < array.Length; k++)
-
+                for (int j = 0; j < position + 1; j++)
                 {
-                    if (array[i] == array[k])
+                    if (array[i] == arrayWithoutDupes[j])
                     {
-                        indexDublicates[i] = i;
-                        counterDublicates++;
+                        isDuplicate = true;
+                        break;
                     }
                 }
+                if (!isDuplicate)
+                {
+                    arrayWithoutDupes[position] = array[i];
+                    position++;
+                }
+                isDuplicate = false;
             }
-            int arrSizeCleared = array.Length - counterDublicates;
-            int[] arrayCleared = new int[arrSizeCleared];
 
+            int countZeros = 0;
+            foreach (int item in arrayWithoutDupes)
+            {
+                if (item == 0)
+                    countZeros++;
+            }
+
+            if (countZeros > 0)
+            {
+                int arrayClearedSize = arrayWithoutDupes.Length - countZeros;
+                int[] arrayCleared = new int[arrayClearedSize];
+                Array.Copy(arrayWithoutDupes, arrayCleared, arrayClearedSize);
+            }
         }
 
         public static void GetIndexesOfElementsInRange()
