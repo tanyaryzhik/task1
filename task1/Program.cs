@@ -43,10 +43,12 @@ namespace task1
             //UnpackArray();
             //PerfectNumber();
             int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[,] arrayDuo = { {1,2,3,1,5 },{4,3,1,2,1 } };
             //MyReverse(array);
             //SubArray(array, 3, 10);
             //AddElementToArray(array);
-            AddValueToBeginningOfArray(array, 9);
+            //AddValueToBeginningOfArray(array, 9);
+            HowManyValues(arrayDuo, 1);
             Console.ReadLine();
         }
 
@@ -313,6 +315,17 @@ namespace task1
                 addedArray[i + 1] = array[i];
             }
             return addedArray;
+        }
+
+        public static int HowManyValues(int[,] array, int value)
+        {
+            int count = 0;
+            foreach (int item in array)
+            {
+                if (item == value)
+                    count++;
+            }
+            return count;
         }
 
     }
