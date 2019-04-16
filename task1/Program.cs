@@ -42,8 +42,9 @@ namespace task1
             //GetElementsMoreThanMean();
             //UnpackArray();
             //PerfectNumber();
-            int[] array = new int[] {1,2,3,4,5};
-            MyReverse(array);
+            int[] array = new int[] {1,2,3,4,5,6,7,8,9,10};
+            //MyReverse(array);
+            SubArray(array, 3, 10);
             Console.ReadLine();
         }
 
@@ -273,6 +274,22 @@ namespace task1
                 if (sum == k)
                     Console.WriteLine($"{k} is perfect");
             }
+        }
+
+        public static int[] SubArray(int[] array, int index, int count)
+        {
+            int[] subArray = new int[count];
+            int tempIndex = index;
+            for (int i = 0; i < count; i++)
+            {
+                if (tempIndex < array.Length)
+                    subArray[i] = array[tempIndex];
+                else
+                    subArray[i] = 1;
+
+                tempIndex++;
+            }
+            return subArray;
         }
     }
 }
