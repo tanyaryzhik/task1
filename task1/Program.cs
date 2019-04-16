@@ -37,11 +37,13 @@ namespace task1
             //Console.WriteLine(str2);
             //Console.WriteLine(str3);
             //arrayAnalyze();
-            DeleteDuplicates();
+            //DeleteDuplicates();
             //GetIndexesOfElementsInRange();
             //GetElementsMoreThanMean();
             //UnpackArray();
             //PerfectNumber();
+            int[] array = new int[] {1,2,3,4,5};
+            MyReverse(array);
             Console.ReadLine();
         }
 
@@ -201,17 +203,15 @@ namespace task1
             }
         }
 
-        // public static int[] MyReverse(int[] array)
-        // {
-        //     int[] revArray = new int[array.Length];
-        //     for (int i = 0; i< array.Length; i++)
-        //     {
-        //         for (int k = array.Length-1; k < array.Length; k--)
-        //         {
-
-        //         }
-        //     }
-        // }
+        public static int[] MyReverse(int[] array)
+        {
+            int[] revArray = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                revArray[i] = array[array.Length -1 - i];
+            }
+            return revArray;
+        }
 
         public static void UnpackArray()
         {
