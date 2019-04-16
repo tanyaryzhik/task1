@@ -42,9 +42,11 @@ namespace task1
             //GetElementsMoreThanMean();
             //UnpackArray();
             //PerfectNumber();
-            int[] array = new int[] {1,2,3,4,5,6,7,8,9,10};
+            int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             //MyReverse(array);
-            SubArray(array, 3, 10);
+            //SubArray(array, 3, 10);
+            //AddElementToArray(array);
+            AddValueToBeginningOfArray(array, 9);
             Console.ReadLine();
         }
 
@@ -209,7 +211,7 @@ namespace task1
             int[] revArray = new int[array.Length];
             for (int i = 0; i < array.Length; i++)
             {
-                revArray[i] = array[array.Length -1 - i];
+                revArray[i] = array[array.Length - 1 - i];
             }
             return revArray;
         }
@@ -291,5 +293,27 @@ namespace task1
             }
             return subArray;
         }
+
+        public static int[] AddElementToArray(int[] array)
+        {
+            int[] addedArray = new int[array.Length + 1];
+            for (int i = 0; i < array.Length; i++)
+            {
+                addedArray[i] = array[i];
+            }
+            return addedArray;
+        }
+
+        public static int[] AddValueToBeginningOfArray(int[] array, int value)
+        {
+            int[] addedArray = new int[array.Length + 1];
+            addedArray[0] = value;
+            for (int i = 0; i < array.Length; i++)
+            {
+                addedArray[i + 1] = array[i];
+            }
+            return addedArray;
+        }
+
     }
 }
