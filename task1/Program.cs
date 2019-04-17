@@ -50,7 +50,8 @@ namespace task1
             //AddValueToBeginningOfArray(array, 9);
             //HowManyValues(arrayDuo, 1);
             //ChangeStringsOfMatrix();
-            GetSumOfPurchase();
+            //GetSumOfPurchase();
+            Encrypt();
             Console.ReadLine();
         }
 
@@ -404,6 +405,31 @@ namespace task1
                 }
 
             }
+        }
+
+        public static void Encrypt()
+        {
+            var encryptChars = new char[10] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            var cipher = new char[11] { ';', '+', '/', '.', '^', '@', '"', '!', '%', '#', '$' };
+            Console.WriteLine("Enter the message");
+            string inputMessage = Console.ReadLine();
+            char[] encryptedMessage = new char[inputMessage.Length];
+            for (int i = 0; i < inputMessage.Length; i++)
+            {
+                for (int j = 0; j < encryptChars.Length; j++)
+                {
+                    if (inputMessage[i] == encryptChars[j])
+                        encryptedMessage[i] = cipher[j];
+                }
+                if (encryptedMessage[i] == '\x0000')
+                    encryptedMessage[i] = cipher[10];
+            }
+
+            foreach (char symbol in encryptedMessage)
+            {
+                Console.Write(symbol);
+            }
+
         }
     }
 }
