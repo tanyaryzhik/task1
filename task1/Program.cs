@@ -414,12 +414,19 @@ namespace task1
             Console.WriteLine("Enter the message");
             string inputMessage = Console.ReadLine();
             char[] encryptedMessage = new char[inputMessage.Length];
+
+            //
+            // Encrypt.
+            //
             for (int i = 0; i < inputMessage.Length; i++)
             {
                 for (int j = 0; j < encryptChars.Length; j++)
                 {
                     if (inputMessage[i] == encryptChars[j])
+                    {
                         encryptedMessage[i] = cipher[j];
+                        break;
+                    }
                 }
                 if (encryptedMessage[i] == '\x0000')
                     encryptedMessage[i] = cipher[10];
@@ -429,7 +436,31 @@ namespace task1
             {
                 Console.Write(symbol);
             }
-
+            Console.WriteLine();
+            //
+            // Decipher.
+            //
+            char[] decryptedMessage = new char[encryptedMessage.Length];
+            for (int i = 0; i < encryptedMessage.Length; i++)
+            {
+                if (encryptedMessage[i] == '$')
+                    decryptedMessage[i] = '$';
+                else
+                {
+                    for (int j = 0; j < encryptChars.Length; j++)
+                    {
+                        if (encryptedMessage[i] == cipher[j])
+                        {
+                            decryptedMessage[i] = encryptChars[j];
+                            break;
+                        }
+                    }
+                }
+            }
+            foreach (char symbol in decryptedMessage)
+            {
+                Console.Write(symbol);
+            }
         }
     }
 }
