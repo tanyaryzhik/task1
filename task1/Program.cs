@@ -43,12 +43,14 @@ namespace task1
             //UnpackArray();
             //PerfectNumber();
             int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int[,] arrayDuo = { {1,2,3,1,5 },{4,3,1,2,1 } };
+            int[,] arrayDuo = { { 1, 2, 3, 1, 5 }, { 4, 3, 1, 2, 1 } };
             //MyReverse(array);
             //SubArray(array, 3, 10);
             //AddElementToArray(array);
             //AddValueToBeginningOfArray(array, 9);
-            HowManyValues(arrayDuo, 1);
+            //HowManyValues(arrayDuo, 1);
+            //ChangeStringsOfMatrix();
+            GetSumOfPurchase();
             Console.ReadLine();
         }
 
@@ -328,5 +330,80 @@ namespace task1
             return count;
         }
 
+        public static void ChangeStringsOfMatrix()
+        {
+            Console.WriteLine("This is given matrix of numbers");
+            int[,] array = new int[5, 7];
+            var random = new Random();
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 7; j++)
+                {
+                    array[i, j] = random.Next(100);
+                    Console.Write(array[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Enter number of strings you want to replace");
+            Console.WriteLine("String number:");
+            int strNum1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Replace with string number:");
+            int strNum2 = Convert.ToInt32(Console.ReadLine());
+
+            int temp = 0;
+
+        }
+
+        public static void GetSumOfPurchase()
+        {
+            string[] items = new string[10] { "pear", "apple", "cucumber", "tomato", "dill", "parsley", "chicken", "cheese", "butter", "milk" };
+            double[] price = new double[10] { 40.50, 31.20, 21.80, 35.00, 150.00, 145.00, 200.00, 400.00, 81.40, 53.35 };
+            Console.WriteLine("Enter items and quantity to purchase.");
+            bool isListFull = false;
+            double[] quantity = new double[10];
+            string item = string.Empty;
+            double itemQuantity = 0.0;
+            string answer = string.Empty;
+            double sum = 0.0;
+            do
+            {
+                Console.WriteLine("Item");
+                item = Console.ReadLine();
+                Console.WriteLine("Quantity");
+                itemQuantity = Convert.ToDouble(Console.ReadLine());
+                FillQuantityArray(item, itemQuantity, items,ref quantity);
+                Console.WriteLine("Continue? Y/N");
+                answer = Console.ReadLine();
+                if (answer == "n")
+                    isListFull = true;
+                else
+                    isListFull = false;
+
+            } while (isListFull == false);
+
+            for (int i = 0; i < quantity.Length; i++)
+            {
+                if (quantity[i] !=0)
+                {
+                    sum += (double)quantity[i] * price[i];
+                }
+
+            }
+            Console.WriteLine($"Sum of purchase is {sum}");
+        }
+
+        private static void FillQuantityArray(string item, double itemQuantity, string[] items,ref double[]quantity)
+        {
+            for (int i = 0; i < items.Length;i++)
+            {
+                if (items[i] == item)
+                {
+                    quantity[i] = itemQuantity;
+                    break;
+                }
+
+            }
+        }
     }
 }
