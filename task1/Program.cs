@@ -39,8 +39,8 @@ namespace task1
             //HowManySymbolInText();
             //InsertString();
             //DeleteSpaces();
-            DeleteExcessSpaces();
-        
+            //DeleteExcessSpaces();
+            FirstSymbolOfWordByNumber();
             Console.ReadLine();
         }
 
@@ -122,6 +122,17 @@ namespace task1
                 else
                 Console.Write(item + " ");
             }
+        }
+
+        public static void FirstSymbolOfWordByNumber()
+        {
+            Console.WriteLine("Input text");
+            string text = Console.ReadLine();
+            string[] array = text.Split(' ');
+            Console.WriteLine("Input number of word");
+            int position = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(array[position - 1][0]);
+
         }
     }
 }
