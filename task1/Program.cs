@@ -37,7 +37,8 @@ namespace task1
             //Console.WriteLine(str2);
             //Console.WriteLine(str3);
             //HowManySymbolInText();
-            InsertString();
+            //InsertString();
+            DeleteSpaces();
             Console.ReadLine();
         }
 
@@ -72,7 +73,8 @@ namespace task1
             Console.WriteLine("In what position should text be inserted?");
             int position = Convert.ToInt32(Console.ReadLine());
             string result = text.Insert(position, insertedText);
-            //int resultTextLength = text.Length + insertedText.Length;
+            
+//int resultTextLength = text.Length + insertedText.Length;
             //char[] result = new char[resultTextLength];
             //for (int i = 0; i < result.Length; i++)
             //{
@@ -84,6 +86,22 @@ namespace task1
             //        result[i] = text[result.Length - posit];
             //}
             Console.WriteLine(result);
+        }
+
+        public static void DeleteSpaces()
+        {
+            Console.WriteLine("Input text");
+            string text = Console.ReadLine();
+            //string result = string.Empty;
+            
+            int index1 = text.IndexOf('?', 0);
+            int index2 = text.IndexOf('?', index1+1);
+            char[] result = new char[text.Length];
+            StringBuilder str = new StringBuilder();
+            str = str.Append(text);
+            str.Replace(" ",null , index1, index2 - index1);
+            Console.WriteLine(str);
+                       
         }
     }
 }
