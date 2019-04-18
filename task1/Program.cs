@@ -38,7 +38,9 @@ namespace task1
             //Console.WriteLine(str3);
             //HowManySymbolInText();
             //InsertString();
-            DeleteSpaces();
+            //DeleteSpaces();
+            DeleteExcessSpaces();
+        
             Console.ReadLine();
         }
 
@@ -102,6 +104,24 @@ namespace task1
             str.Replace(" ",null , index1, index2 - index1);
             Console.WriteLine(str);
                        
+        }
+
+        public static void DeleteExcessSpaces()
+        {
+            Console.WriteLine("Input text");
+            string text = Console.ReadLine();
+            string[] array = text.Split(' ');
+            foreach (string item in array)
+            {
+                item.Trim();
+            }
+            foreach (string item in array)
+            {
+                if (item == string.Empty)
+                    continue;
+                else
+                Console.Write(item + " ");
+            }
         }
     }
 }
