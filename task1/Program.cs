@@ -36,7 +36,8 @@ namespace task1
             //Console.WriteLine(str1);
             //Console.WriteLine(str2);
             //Console.WriteLine(str3);
-            HowManySymbolInText();
+            //HowManySymbolInText();
+            InsertString();
             Console.ReadLine();
         }
 
@@ -60,6 +61,29 @@ namespace task1
                     count++;
             }
             Console.WriteLine($"Symbol {symbol} is met {count} times");
+        }
+
+        public static void InsertString()
+        {
+            Console.WriteLine("Enter text");
+            string text = Console.ReadLine();
+            Console.WriteLine("Enter inserted text");
+            string insertedText = Console.ReadLine();
+            Console.WriteLine("In what position should text be inserted?");
+            int position = Convert.ToInt32(Console.ReadLine());
+            string result = text.Insert(position, insertedText);
+            //int resultTextLength = text.Length + insertedText.Length;
+            //char[] result = new char[resultTextLength];
+            //for (int i = 0; i < result.Length; i++)
+            //{
+            //    if (i < position)
+            //        result[i] = text[i];
+            //    else if (i == position || i < position + insertedText.Length)
+            //        result[i] = insertedText[i - position];
+            //    else
+            //        result[i] = text[result.Length - posit];
+            //}
+            Console.WriteLine(result);
         }
     }
 }
