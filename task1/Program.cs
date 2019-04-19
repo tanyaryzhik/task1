@@ -43,7 +43,8 @@ namespace task1
             //FirstSymbolOfWordByNumber();
             //TransformToUpperCase();
             //ErrorPrint();
-            GetNumberOfVowels();
+            //GetNumberOfVowels();
+            ReplaceWords();
             Console.ReadLine();
         }
 
@@ -168,6 +169,19 @@ namespace task1
             }
             Console.WriteLine(count);
             return count;
+        }
+
+        public static void ReplaceWords()
+        {
+            Console.WriteLine("Input text");
+            string text = Console.ReadLine();
+            string[] array = text.Split(' ');
+            string result = string.Empty;
+            for (int i = array.Length - 1; i >= 0; i--)
+            {
+                result += array[i] + " ";
+            }
+            Console.WriteLine(result);
         }
     }
 }
