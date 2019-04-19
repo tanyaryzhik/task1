@@ -45,7 +45,8 @@ namespace task1
             //ErrorPrint();
             //GetNumberOfVowels();
             //ReplaceWords();
-            LongestAndShortestWord();
+            //LongestAndShortestWord();
+            ClearDuplicateSymbols();
             Console.ReadLine();
         }
 
@@ -200,6 +201,30 @@ namespace task1
                     shortestWord = array[i];
             }
             Console.WriteLine($"Shortest is {shortestWord} and longest is {longestWord}");
+        }
+
+        public static void ClearDuplicateSymbols()
+        {
+            Console.WriteLine("Input text");
+            string text = Console.ReadLine();
+            StringBuilder result = new StringBuilder();
+            result.Append(text[0]);
+            bool isDuplicate = false;
+            for (int i = 1; i < text.Length; i++)
+            {
+                isDuplicate = false;
+                for (int k = 0; k < result.Length; k++)
+                {
+                    if (text[i] == result[k])
+                    {
+                        isDuplicate = true;
+                        continue;
+                    }
+                }
+                if (isDuplicate == false)
+                    result.Append(text[i]);
+            }
+            Console.WriteLine(result);
         }
     }
 }
