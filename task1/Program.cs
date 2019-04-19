@@ -44,7 +44,8 @@ namespace task1
             //TransformToUpperCase();
             //ErrorPrint();
             //GetNumberOfVowels();
-            ReplaceWords();
+            //ReplaceWords();
+            LongestAndShortestWord();
             Console.ReadLine();
         }
 
@@ -182,6 +183,23 @@ namespace task1
                 result += array[i] + " ";
             }
             Console.WriteLine(result);
+        }
+
+        public static void LongestAndShortestWord()
+        {
+            Console.WriteLine("Input text");
+            string text = Console.ReadLine();
+            string[] array = text.Split(' ');
+            string longestWord = array[0];
+            string shortestWord = array[0];
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].Length > longestWord.Length)
+                    longestWord = array[i];
+                if (array[i].Length < shortestWord.Length)
+                    shortestWord = array[i];
+            }
+            Console.WriteLine($"Shortest is {shortestWord} and longest is {longestWord}");
         }
     }
 }
