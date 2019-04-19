@@ -40,7 +40,8 @@ namespace task1
             //InsertString();
             //DeleteSpaces();
             //DeleteExcessSpaces();
-            FirstSymbolOfWordByNumber();
+            //FirstSymbolOfWordByNumber();
+            TransformToUpperCase();
             Console.ReadLine();
         }
 
@@ -75,18 +76,6 @@ namespace task1
             Console.WriteLine("In what position should text be inserted?");
             int position = Convert.ToInt32(Console.ReadLine());
             string result = text.Insert(position, insertedText);
-            
-//int resultTextLength = text.Length + insertedText.Length;
-            //char[] result = new char[resultTextLength];
-            //for (int i = 0; i < result.Length; i++)
-            //{
-            //    if (i < position)
-            //        result[i] = text[i];
-            //    else if (i == position || i < position + insertedText.Length)
-            //        result[i] = insertedText[i - position];
-            //    else
-            //        result[i] = text[result.Length - posit];
-            //}
             Console.WriteLine(result);
         }
 
@@ -95,15 +84,15 @@ namespace task1
             Console.WriteLine("Input text");
             string text = Console.ReadLine();
             //string result = string.Empty;
-            
+
             int index1 = text.IndexOf('?', 0);
-            int index2 = text.IndexOf('?', index1+1);
+            int index2 = text.IndexOf('?', index1 + 1);
             char[] result = new char[text.Length];
             StringBuilder str = new StringBuilder();
             str = str.Append(text);
-            str.Replace(" ",null , index1, index2 - index1);
+            str.Replace(" ", null, index1, index2 - index1);
             Console.WriteLine(str);
-                       
+
         }
 
         public static void DeleteExcessSpaces()
@@ -120,7 +109,7 @@ namespace task1
                 if (item == string.Empty)
                     continue;
                 else
-                Console.Write(item + " ");
+                    Console.Write(item + " ");
             }
         }
 
@@ -133,6 +122,18 @@ namespace task1
             int position = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(array[position - 1][0]);
 
+        }
+
+        public static void TransformToUpperCase()
+        {
+            Console.WriteLine("Input text");
+            string text = Console.ReadLine();
+            string[] array = text.Split(' ');
+            for(int i = 0; i < array.Length; i++)
+            {
+                array[i] = array[i][0].ToString().ToUpper() + array[i].Substring(1);
+            }
+            Console.WriteLine(string.Join(" ", array));
         }
     }
 }
