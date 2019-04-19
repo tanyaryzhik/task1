@@ -42,7 +42,8 @@ namespace task1
             //DeleteExcessSpaces();
             //FirstSymbolOfWordByNumber();
             //TransformToUpperCase();
-            ErrorPrint();
+            //ErrorPrint();
+            GetNumberOfVowels();
             Console.ReadLine();
         }
 
@@ -153,6 +154,20 @@ namespace task1
                     countError++;
             }
             Console.WriteLine($"The result is {countError}/{count}");
+        }
+
+        public static int GetNumberOfVowels()
+        {
+            Console.WriteLine("Input text");
+            string text = Console.ReadLine();
+            int count = 0;
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i] == 'a' || text[i] == 'o' || text[i] == 'u' || text[i] == 'e' || text[i] == 'i')
+                    count++;
+            }
+            Console.WriteLine(count);
+            return count;
         }
     }
 }
