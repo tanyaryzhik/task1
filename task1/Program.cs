@@ -331,30 +331,30 @@ namespace task1
             return count;
         }
 
-        public static void ChangeStringsOfMatrix()
-        {
-            Console.WriteLine("This is given matrix of numbers");
-            int[,] array = new int[5, 7];
-            var random = new Random();
-            for (int i = 0; i < 5; i++)
-            {
-                for (int j = 0; j < 7; j++)
-                {
-                    array[i, j] = random.Next(100);
-                    Console.Write(array[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
+        //public static void ChangeStringsOfMatrix()
+        //{
+        //    Console.WriteLine("This is given matrix of numbers");
+        //    int[,] array = new int[5, 7];
+        //    var random = new Random();
+        //    for (int i = 0; i < 5; i++)
+        //    {
+        //        for (int j = 0; j < 7; j++)
+        //        {
+        //            array[i, j] = random.Next(100);
+        //            Console.Write(array[i, j] + " ");
+        //        }
+        //        Console.WriteLine();
+        //    }
 
-            Console.WriteLine("Enter number of strings you want to replace");
-            Console.WriteLine("String number:");
-            int strNum1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Replace with string number:");
-            int strNum2 = Convert.ToInt32(Console.ReadLine());
+        //    Console.WriteLine("Enter number of strings you want to replace");
+        //    Console.WriteLine("String number:");
+        //    int strNum1 = Convert.ToInt32(Console.ReadLine());
+        //    Console.WriteLine("Replace with string number:");
+        //    int strNum2 = Convert.ToInt32(Console.ReadLine());
 
-            int temp = 0;
+        //    int temp = 0;
 
-        }
+        //}
 
         public static void GetSumOfPurchase()
         {
