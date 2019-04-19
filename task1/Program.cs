@@ -41,7 +41,8 @@ namespace task1
             //DeleteSpaces();
             //DeleteExcessSpaces();
             //FirstSymbolOfWordByNumber();
-            TransformToUpperCase();
+            //TransformToUpperCase();
+            ErrorPrint();
             Console.ReadLine();
         }
 
@@ -129,11 +130,29 @@ namespace task1
             Console.WriteLine("Input text");
             string text = Console.ReadLine();
             string[] array = text.Split(' ');
-            for(int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 array[i] = array[i][0].ToString().ToUpper() + array[i].Substring(1);
             }
             Console.WriteLine(string.Join(" ", array));
+        }
+
+        public static void ErrorPrint()
+        {
+            Console.WriteLine("Input printer string");
+            string text = Console.ReadLine();
+            int count = 0;
+            int countError = 0;
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i] == 'a' || text[i] == 'b' || text[i] == 'c' || text[i] == 'd' || text[i] == 'e' || text[i] == 'f' || text[i] == 'g' || text[i] == 'h' ||
+                    text[i] == 'i' || text[i] == 'j' || text[i] == 'k' || text[i] == 'l' || text[i] == 'm')
+                    count++;
+                if (text[i] == 'n' || text[i] == 'o' || text[i] == 'p' || text[i] == 'q' || text[i] == 'r' || text[i] == 's' || text[i] == 't' || text[i] == 'u'
+                    || text[i] == 'v' || text[i] == 'w' || text[i] == 'x' || text[i] == 'y' || text[i] == 'z')
+                    countError++;
+            }
+            Console.WriteLine($"The result is {countError}/{count}");
         }
     }
 }
