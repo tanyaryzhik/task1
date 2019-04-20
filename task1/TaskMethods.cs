@@ -92,29 +92,38 @@ namespace task1
         //
         public static void ConvertCurrency()
         {
-            double[] data = InputAmountAndCourse();
-            double result = PerformConvertation(data);
-            Report(data, result);
-        }
-
-        private static void Report(double[] data, double result)
-        {
-            Console.WriteLine($"Amount of money {data[0]} is {result} in chosen currency");
-        }
-
-        private static double PerformConvertation(double[] data)
-        {
-            return data[0] * data[1];
-        }
-
-        private static double[] InputAmountAndCourse()
-        {
-            double[] data = new double[2];
+            decimal amount;
             Console.WriteLine("Input amount of money");
-            Double.TryParse(Console.ReadLine(), out data[0]);
-            Console.WriteLine("Input currency course");
-            Double.TryParse(Console.ReadLine(), out data[1]);
-            return data;
+            Decimal.TryParse(Console.ReadLine(), out amount);
+            Console.WriteLine("Input currency");
+            string currency = Console.ReadLine();
+            decimal result = PerformConvertation(amount, currency);
+            Report(amount, result,currency);
+        }
+
+        private static decimal PerformConvertation(decimal amount, string currency)
+        {
+            decimal result = 0.00m;
+            switch (currency)
+            {
+                case "dollar":
+                    result = Convert.ToDecimal(Convert.ToDouble(amount) * 2.777);
+                    break;
+                case "euro":
+                    result = Convert.ToDecimal(Convert.ToDouble(amount) * 3.125);
+                    break;
+                case "pound":
+                    result = Convert.ToDecimal(Convert.ToDouble(amount) * 5.421);
+                    break;
+                default:
+                    break;
+            }
+                return result;
+            }
+
+            private static void Report(decimal amount, decimal result, string currency)
+            {
+                Console.WriteLine($"Amount of money {amount} is {result} {currency}");
+            }
         }
     }
-}
