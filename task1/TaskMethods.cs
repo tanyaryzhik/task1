@@ -98,7 +98,7 @@ namespace task1
             Console.WriteLine("Input currency");
             string currency = Console.ReadLine();
             decimal result = PerformConvertation(amount, currency);
-            Report(amount, result,currency);
+            Report(amount, result, currency);
         }
 
         private static decimal PerformConvertation(decimal amount, string currency)
@@ -118,12 +118,45 @@ namespace task1
                 default:
                     break;
             }
-                return result;
-            }
+            return result;
+        }
 
-            private static void Report(decimal amount, decimal result, string currency)
+        private static void Report(decimal amount, decimal result, string currency)
+        {
+            Console.WriteLine($"Amount of money {amount} is {result} {currency}");
+        }
+
+        //
+        // Credit.
+        //
+        public static void GetCreditCondition()
+        {
+            decimal credit = 700;
+            Console.WriteLine("Input amount of payment");
+            Decimal.TryParse(Console.ReadLine(), out decimal amount);
+            if (amount < 100)
             {
-                Console.WriteLine($"Amount of money {amount} is {result} {currency}");
+                Console.WriteLine("Payment must be 100 minimum");
+                return;
             }
+            decimal rest = CreditCalculation(credit, amount);
+            AnalyzeOfRest(rest, credit);
+        }
+
+        private static void AnalyzeOfRest(decimal rest, decimal credit)
+        {
+            if (rest >0)
+                Console.WriteLine($"You have to pay {rest}");
+            if (rest < 0)
+                Console.WriteLine($"Overpayment is {Math.Abs(rest)}");
+            if (rest == 0)
+                Console.WriteLine("Credit is paid");
+
+        }
+
+        private static decimal CreditCalculation(decimal credit, decimal amount)
+        {
+            return credit - amount;
         }
     }
+}
