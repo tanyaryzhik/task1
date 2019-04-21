@@ -11,9 +11,10 @@ namespace task1
         static void Main(string[] args)
         {
 
-            TaskMethods.GetCalculation();
+            //TaskMethods.GetCalculation();
             //TaskMethods.ConvertCurrency();
             //TaskMethods.GetCreditCondition();
+            TaskMethods.Validation();
             Console.ReadLine();
         }
 
