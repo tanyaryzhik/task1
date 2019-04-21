@@ -13,11 +13,37 @@ namespace task1
         //
         public static void GetCalculation()
         {
-            string[] data = InputData();
-            double firstNum = Convert.ToDouble(data[0]);
-            double secondNum = Convert.ToDouble(data[1]);
-            double result = Calculator(firstNum, secondNum, data[2]);
-            WriteResult(firstNum, secondNum, data[2], result);
+            double firstNum = GetNumber();
+            double secondNum = GetNumber();
+            string sign = GetSign();
+            double result = Calculator(firstNum, secondNum, sign);
+            WriteResult(firstNum, secondNum, sign, result);
+        }
+
+        private static string GetSign()
+        {
+            Console.WriteLine("Input sign of action +, -, *, /");
+            string sign = Console.ReadLine();
+            if (sign != "+" && sign != "-" && sign != "*" && sign != "/")
+            {
+                Console.WriteLine("Input data is not valid");
+                throw new ArgumentException(String.Format($"{sign} is not +, -, *, /"));
+            }
+            else
+                return sign;
+        }
+
+        private static double GetNumber()
+        {
+            Console.WriteLine("Input number");
+            bool success = Double.TryParse(Console.ReadLine(), out double number);
+            if (success == false)
+            {
+                Console.WriteLine("Input data is not valid");
+                throw new ArgumentException(String.Format($"{number} is not a number"));
+            }
+            else
+                return number;
         }
 
         private static void WriteResult(double firstNum, double secondNum, string sign, double result)
@@ -73,18 +99,6 @@ namespace task1
         private static double Add(double firstNum, double secondNum)
         {
             return firstNum + secondNum;
-        }
-
-        private static string[] InputData()
-        {
-            string[] data = new string[3];
-            Console.WriteLine("Input first number");
-            data[0] = Console.ReadLine();
-            Console.WriteLine("Input second number");
-            data[1] = Console.ReadLine();
-            Console.WriteLine("Choose action +,-,*,/");
-            data[2] = Console.ReadLine();
-            return data;
         }
 
         //
@@ -145,7 +159,7 @@ namespace task1
 
         private static void AnalyzeOfRest(decimal rest, decimal credit)
         {
-            if (rest >0)
+            if (rest > 0)
                 Console.WriteLine($"You have to pay {rest}");
             if (rest < 0)
                 Console.WriteLine($"Overpayment is {Math.Abs(rest)}");
@@ -162,18 +176,18 @@ namespace task1
         //
         // ATM Pin validation.
         //
-        public static bool Validation()
-        {
-            Console.WriteLine("Input PIN");
-            string inputStr = Console.ReadLine();
-            return ValidatePin(inputStr);
-        }
+        //public static bool Validation()
+        //{
+        //    Console.WriteLine("Input PIN");
+        //    string inputStr = Console.ReadLine();
+        //    return ValidatePin(inputStr);
+        //}
 
-        private static bool ValidatePin(string inputStr)
-        {
-            if (isAllNumbers(inputStr) && isNumOfElementsValid(inputStr))
-                return true;
-        }
+        //private static bool ValidatePin(string inputStr)
+        //{
+        //    if (isAllNumbers(inputStr) && isNumOfElementsValid(inputStr))
+        //        return true;
+        //}
 
         private static bool isNumOfElementsValid(string inputStr)
         {
