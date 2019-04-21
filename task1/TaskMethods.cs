@@ -158,5 +158,31 @@ namespace task1
         {
             return credit - amount;
         }
+
+        //
+        // ATM Pin validation.
+        //
+        public static bool Validation()
+        {
+            Console.WriteLine("Input PIN");
+            string inputStr = Console.ReadLine();
+            return ValidatePin(inputStr);
+        }
+
+        private static bool ValidatePin(string inputStr)
+        {
+            if (isAllNumbers(inputStr) && isNumOfElementsValid(inputStr))
+                return true;
+        }
+
+        private static bool isNumOfElementsValid(string inputStr)
+        {
+            return true;
+        }
+
+        private static bool isAllNumbers(string inputStr)
+        {
+            return Int32.TryParse(inputStr, out int result);
+        }
     }
 }
