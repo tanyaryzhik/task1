@@ -49,9 +49,9 @@ namespace task1
             //AddElementToArray(array);
             //AddValueToBeginningOfArray(array, 9);
             //HowManyValues(arrayDuo, 1);
-            //ChangeStringsOfMatrix();
+            ChangeStringsOfMatrix();
             //GetSumOfPurchase();
-            Encrypt();
+            //Encrypt();
             Console.ReadLine();
         }
 
@@ -331,30 +331,50 @@ namespace task1
             return count;
         }
 
-        //public static void ChangeStringsOfMatrix()
-        //{
-        //    Console.WriteLine("This is given matrix of numbers");
-        //    int[,] array = new int[5, 7];
-        //    var random = new Random();
-        //    for (int i = 0; i < 5; i++)
-        //    {
-        //        for (int j = 0; j < 7; j++)
-        //        {
-        //            array[i, j] = random.Next(100);
-        //            Console.Write(array[i, j] + " ");
-        //        }
-        //        Console.WriteLine();
-        //    }
+        public static void ChangeStringsOfMatrix()
+        {
+            Console.WriteLine("This is given matrix of numbers");
+            int[,] array = new int[5, 7];
+            var random = new Random();
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 7; j++)
+                {
+                    array[i, j] = random.Next(100);
+                    Console.Write(array[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
 
-        //    Console.WriteLine("Enter number of strings you want to replace");
-        //    Console.WriteLine("String number:");
-        //    int strNum1 = Convert.ToInt32(Console.ReadLine());
-        //    Console.WriteLine("Replace with string number:");
-        //    int strNum2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter number of strings you want to replace");
+            Console.WriteLine("String number:");
+            int strNum1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Replace with string number:");
+            int strNum2 = Convert.ToInt32(Console.ReadLine());
+            int temp = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                if (i == strNum1)
+                {
+                    for (int j = 0; j < 7; j++)
+                    {
+                        temp = array[i, j];
+                        array[i, j] = array[strNum2, j];
+                        array[strNum2, j] = temp;
+                    }
+                }
+            }
 
-        //    int temp = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 7; j++)
+                {
+                    Console.Write(array[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
 
-        //}
+        }
 
         public static void GetSumOfPurchase()
         {
@@ -373,7 +393,7 @@ namespace task1
                 item = Console.ReadLine();
                 Console.WriteLine("Quantity");
                 itemQuantity = Convert.ToDouble(Console.ReadLine());
-                FillQuantityArray(item, itemQuantity, items,ref quantity);
+                FillQuantityArray(item, itemQuantity, items, ref quantity);
                 Console.WriteLine("Continue? Y/N");
                 answer = Console.ReadLine();
                 if (answer == "n")
@@ -385,7 +405,7 @@ namespace task1
 
             for (int i = 0; i < quantity.Length; i++)
             {
-                if (quantity[i] !=0)
+                if (quantity[i] != 0)
                 {
                     sum += (double)quantity[i] * price[i];
                 }
@@ -394,9 +414,9 @@ namespace task1
             Console.WriteLine($"Sum of purchase is {sum}");
         }
 
-        private static void FillQuantityArray(string item, double itemQuantity, string[] items,ref double[]quantity)
+        private static void FillQuantityArray(string item, double itemQuantity, string[] items, ref double[] quantity)
         {
-            for (int i = 0; i < items.Length;i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 if (items[i] == item)
                 {
