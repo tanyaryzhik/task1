@@ -49,9 +49,10 @@ namespace task1
             //AddElementToArray(array);
             //AddValueToBeginningOfArray(array, 9);
             //HowManyValues(arrayDuo, 1);
-            ChangeStringsOfMatrix();
+            //ChangeStringsOfMatrix();
             //GetSumOfPurchase();
             //Encrypt();
+            GetSumOfElementsInRow();
             Console.ReadLine();
         }
 
@@ -481,6 +482,32 @@ namespace task1
             {
                 Console.Write(symbol);
             }
+        }
+
+        public static void GetSumOfElementsInRow()
+        {
+            Console.WriteLine("This is given matrix of numbers");
+            int[,] array = new int[5, 7];
+            var random = new Random();
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 7; j++)
+                {
+                    array[i, j] = random.Next(100);
+                    Console.Write(array[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Enter number of row from 0 to 6");
+            Int32.TryParse(Console.ReadLine(), out int row);
+            int sum = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                sum += array[i, row];
+            }
+
+            Console.WriteLine($"Sum is {sum}");
         }
     }
 }
