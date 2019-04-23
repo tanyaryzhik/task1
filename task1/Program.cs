@@ -14,7 +14,8 @@ namespace task1
             //TaskMethods.GetCalculation();
             //TaskMethods.ConvertCurrency();
             //TaskMethods.GetCreditCondition();
-            TaskMethods.Validation();
+            //TaskMethods.Validation();
+           TaskMethods.UniteStrings();
             Console.ReadLine();
         }
 

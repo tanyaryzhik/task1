@@ -209,9 +209,46 @@ namespace task1
         //
         public static string GetDistinctLetters(string firstString, string secondString)
         {
-            string result = string.Empty;
+            string text = firstString + secondString;
+            StringBuilder result = new StringBuilder();
+            result.Append(text[0]);
+            bool isDuplicate = false;
+            for (int i = 1; i < text.Length; i++)
+            {
+                isDuplicate = false;
+                for (int k = 0; k < result.Length; k++)
+                {
+                    if (text[i] == result[k])
+                    {
+                        isDuplicate = true;
+                        continue;
+                    }
+                }
+                if (isDuplicate == false)
+                    result.Append(text[i]);
+            }
+            string resultString = SortLetters(result);
+            return resultString;
+        }
 
-            return result;
+        private static string SortLetters(StringBuilder result)
+        {
+            string resultText = string.Empty;
+            int temp = 0;
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    if (result[i] > result[j])
+                    {
+                        temp = result[j];
+                        result[j] = result[i];
+                        result[i] = (char)temp;
+                    }
+                }
+            }
+            resultText = result.ToString();
+            return resultText;
         }
 
         public static void UniteStrings()
@@ -219,6 +256,7 @@ namespace task1
             string firstString = GetString();
             string secondString = GetString();
             string resultString = GetDistinctLetters(firstString, secondString);
+            Console.WriteLine(resultString);
         }
 
         private static string GetString()
