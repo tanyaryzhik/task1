@@ -203,5 +203,28 @@ namespace task1
         {
             return Int32.TryParse(inputStr, out int result);
         }
+
+        //
+        // Get string of distinct letters from two strings.
+        //
+        public static string GetDistinctLetters(string firstString, string secondString)
+        {
+            string result = string.Empty;
+
+            return result;
+        }
+
+        public static void UniteStrings()
+        {
+            string firstString = GetString();
+            string secondString = GetString();
+            string resultString = GetDistinctLetters(firstString, secondString);
+        }
+
+        private static string GetString()
+        {
+            Console.WriteLine("Enter text");
+            return Console.ReadLine();
+        }
     }
 }
