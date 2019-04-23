@@ -15,7 +15,8 @@ namespace task1
             //TaskMethods.ConvertCurrency();
             //TaskMethods.GetCreditCondition();
             //TaskMethods.Validation();
-           TaskMethods.UniteStrings();
+            //TaskMethods.UniteStrings();
+            TaskMethods.TransformString();
             Console.ReadLine();
         }
 
@@ -26,6 +27,6 @@ namespace task1
             return square;
         }
 
-        
+
     }
 }

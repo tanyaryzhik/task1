@@ -264,5 +264,31 @@ namespace task1
             Console.WriteLine("Enter text");
             return Console.ReadLine();
         }
+
+        //
+        // To camel case.
+        //
+        public static void TransformString()
+        {
+            string inputStr = GetString();
+            string result = ToCamelCase(inputStr);
+            Console.WriteLine(result);
+        }
+
+        private static string ToCamelCase(string inputStr)
+        {
+            StringBuilder text = new StringBuilder();
+            for (int i = 0; i < inputStr.Length; i++)
+            {
+                if (inputStr[i] == '-' || inputStr[i] == '_')
+                {
+                    text.Append(inputStr[i + 1].ToString().ToUpper());
+                    i++;
+                }
+                else
+                    text.Append(inputStr[i]);
+            }
+            return text.ToString();
+        }
     }
 }
