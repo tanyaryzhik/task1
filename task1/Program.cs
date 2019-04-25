@@ -16,7 +16,8 @@ namespace task1
             //TaskMethods.GetCreditCondition();
             //TaskMethods.Validation();
             //TaskMethods.UniteStrings();
-            TaskMethods.TransformString();
+            //TaskMethods.TransformString();
+            TaskMethods.TaskWithTriangle();
             Console.ReadLine();
         }
 

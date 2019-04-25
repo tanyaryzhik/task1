@@ -290,5 +290,72 @@ namespace task1
             }
             return text.ToString();
         }
+
+        //
+        // Triangle of odd numbers.
+        //
+        public static void TaskWithTriangle()
+        {
+            Console.WriteLine("Number of rows");
+            int numberOfRows = GetNum();
+            int[][] triangleArray = new int[numberOfRows][];
+            triangleArray = BuildTriangleArray(numberOfRows);
+            Console.WriteLine("What row do you want to get sum of elements of?");
+            int rowNumber = GetRowNum(numberOfRows);
+            int sum = RowSumOddNumbers(rowNumber, triangleArray);
+            Console.WriteLine("Sum is " + sum);
+        }
+
+        private static int GetRowNum(int numberOfRows)
+        {
+            int rowNumber = 0;
+            do
+            {
+                rowNumber = GetNum();
+                if (rowNumber >= numberOfRows)
+                    Console.WriteLine("Row number must be greater than number of rows");
+            } while (rowNumber >= numberOfRows);
+            return rowNumber;
+        }
+
+        private static int RowSumOddNumbers(int rowNumber, int[][] triangleArray)
+        {
+            int sum = 0;
+            for (int i = 0; i < rowNumber+1; i++)
+            {
+                sum += triangleArray[rowNumber][i];
+            }
+            return sum;
+        }
+
+        private static int[][] BuildTriangleArray(int numberOfRows)
+        {
+            int[][] triangleArray = new int[numberOfRows][];
+            int value = 1;
+            for (int i = 0; i < numberOfRows; i++)
+            {
+                triangleArray[i] = new int[i + 1];
+                for (int j = 0; j < i + 1; j++)
+                {
+                    triangleArray[i][j] = value;
+                    value += 2;
+                }
+            }
+            return triangleArray;
+        }
+
+        private static int GetNum()
+        {
+            bool success = false;
+            int number = 0;
+            do
+            {
+                Console.WriteLine("Input number");
+                success = Int32.TryParse(Console.ReadLine(), out number);
+                if (success == false)
+                    Console.WriteLine("Invalid number input");
+            } while (success == false);
+            return number;
+        }
     }
 }
