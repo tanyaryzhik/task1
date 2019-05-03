@@ -17,7 +17,8 @@ namespace task1
             //TaskMethods.Validation();
             //TaskMethods.UniteStrings();
             //TaskMethods.TransformString();
-            TaskMethods.TaskWithTriangle();
+            //TaskMethods.TaskWithTriangle();
+            new PupilsDataRepresenting().Execute();
             Console.ReadLine();
         }
 

@@ -19,7 +19,10 @@ namespace task1
             double result = Calculator(firstNum, secondNum, sign);
             WriteResult(firstNum, secondNum, sign, result);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private static string GetSign()
         {
             Console.WriteLine("Input sign of action +, -, *, /");
