@@ -16,7 +16,7 @@ namespace task1
             double firstNum = GetNumber();
             double secondNum = GetNumber();
             string sign = GetSign();
-            double result = Calculator(firstNum, secondNum, sign);
+            double result = GetCalculation(firstNum, secondNum, sign);
             WriteResult(firstNum, secondNum, sign, result);
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace task1
         {
             Console.WriteLine("Input number");
             bool success = Double.TryParse(Console.ReadLine(), out double number);
-            if (success == false)
+            if (!success)
             {
                 Console.WriteLine("Input data is not valid");
                 throw new ArgumentException(String.Format($"{number} is not a number"));
@@ -53,10 +53,11 @@ namespace task1
         {
             if (secondNum == 0 && sign == "/")
                 return;
+
             Console.WriteLine($"{firstNum} {sign} {secondNum} = {result}");
         }
 
-        public static double Calculator(double firstNum, double secondNum, string sign)
+        public static double GetCalculation(double firstNum, double secondNum, string sign)
         {
             double result = 0.0;
             switch (sign)
@@ -132,8 +133,6 @@ namespace task1
                 case "pound":
                     result = Convert.ToDecimal(Convert.ToDouble(amount) * 5.421);
                     break;
-                default:
-                    break;
             }
             return result;
         }
@@ -162,11 +161,11 @@ namespace task1
 
         private static void AnalyzeOfRest(decimal rest, decimal credit)
         {
-            if (rest > 0)
+            if (rest > Decimal.Zero)
                 Console.WriteLine($"You have to pay {rest}");
-            if (rest < 0)
+            if (rest < Decimal.Zero)
                 Console.WriteLine($"Overpayment is {Math.Abs(rest)}");
-            if (rest == 0)
+            if (rest == Decimal.Zero)
                 Console.WriteLine("Credit is paid");
 
         }
@@ -188,13 +187,13 @@ namespace task1
 
         private static bool ValidatePin(string inputStr)
         {
-            if (isAllNumbers(inputStr) && isNumOfElementsValid(inputStr))
+            if (IsAllNumbers(inputStr) && IsNumOfElementsValid(inputStr))
                 return true;
             else
                 return false;
         }
 
-        private static bool isNumOfElementsValid(string inputStr)
+        private static bool IsNumOfElementsValid(string inputStr)
         {
             if (inputStr.Length == 4 || inputStr.Length == 6)
                 return true;
@@ -202,7 +201,7 @@ namespace task1
                 return false;
         }
 
-        private static bool isAllNumbers(string inputStr)
+        private static bool IsAllNumbers(string inputStr)
         {
             return Int32.TryParse(inputStr, out int result);
         }
@@ -324,7 +323,7 @@ namespace task1
         private static int RowSumOddNumbers(int rowNumber, int[][] triangleArray)
         {
             int sum = 0;
-            for (int i = 0; i < rowNumber+1; i++)
+            for (int i = 0; i < rowNumber + 1; i++)
             {
                 sum += triangleArray[rowNumber][i];
             }

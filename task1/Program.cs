@@ -28,7 +28,5 @@ namespace task1
             decimal square = Pi * r * r;
             return square;
         }
-
-
     }
 }
