@@ -16,6 +16,8 @@ namespace task1
         {
             Type = type;
             Brake = brake;
+            header.Append(String.Format("{0,20} {1,20} \n\n", "Type", "Brake"));
+            vehicleData.Append(String.Format("{0,20} {1,20} \n\n", Type, Brake));
         }
     }
 

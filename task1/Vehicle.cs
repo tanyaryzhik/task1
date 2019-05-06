@@ -40,6 +40,9 @@ namespace task1
                 }
             }
         }
+        public StringBuilder header { get; set; }
+        public StringBuilder vehicleData { get; set; }
+
 
         public Vehicle(int wheelCount, ConsoleColor color, int maxSpeed, int passengerCount)
         {
@@ -47,12 +50,22 @@ namespace task1
             Color = color;
             MaxSpeed = maxSpeed;
             PassengerCount = passengerCount;
+            header = new StringBuilder(String.Format("{0,20} {1,20} {2,20} {3,20}", "WheelCount", "MaxSpeed", "PassengerCount", "Color"));
+            vehicleData = new StringBuilder(String.Format("{0,20} {1,20} {2,20} {3,20}", WheelCount, MaxSpeed, PassengerCount, Color));
         }
 
         public void Move(int meters)
         {
             Console.ForegroundColor = Color;
             Console.WriteLine($"{GetType().Name} has moved {meters} metres");
+        }
+
+        public void DisplayInfo()
+        {
+            Console.BufferWidth = 800;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(header);
+            Console.WriteLine(vehicleData);
         }
     }
 }

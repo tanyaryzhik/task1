@@ -17,6 +17,10 @@ namespace task1
             car.Move(500);
             bicycle.Move(100);
             motocycle.Move(10);
+
+            car.DisplayInfo();
+            bicycle.DisplayInfo();
+            motocycle.DisplayInfo();
         }
     }
 }

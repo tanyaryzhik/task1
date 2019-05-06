@@ -18,6 +18,8 @@ namespace task1
             DoorsCount = doorsCount;
             Engine = engine;
             GearBox = gearbox;
+            header.Append(String.Format("{0,20} {1,20} {2,20} \n\n", "DoorsCount", "Engine", "GearBox"));
+            vehicleData.Append(String.Format("{0,20} {1,20} {2,20} \n\n", DoorsCount, Engine, GearBox));
         }
     }
 
