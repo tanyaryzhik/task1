@@ -18,7 +18,10 @@ namespace task1
             //TaskMethods.UniteStrings();
             //TaskMethods.TransformString();
             //TaskMethods.TaskWithTriangle();
-            new PupilsDataRepresenting().Execute();
+            //new PupilsDataRepresenting().Execute();
+            ColorSet colorSet = new ColorSet();
+            colorSet.Print("Hello world", "Green");
+            colorSet.Print("Hello world", "Red");
             Console.ReadLine();
         }
 

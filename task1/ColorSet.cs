@@ -6,21 +6,44 @@ using System.Threading.Tasks;
 
 namespace task1
 {
-    static class ColorSet
+    class ColorSet
     {
-        public Color color
-        public static void Print(string text, string color)
+        public Color color;
+        public void Print(string text, string color)
         {
-            Console.ForegroundColor = color.to;
+            Console.ForegroundColor = DetectColor(color);
             Console.WriteLine(text);
         }
+
+        private ConsoleColor DetectColor(string color)
+        {
+            ConsoleColor checkedColor = ConsoleColor.White;
+            switch (color)
+            {
+                case "Red":
+                    checkedColor = ConsoleColor.Red;
+                    break;
+                case "Yellow":
+                    checkedColor = ConsoleColor.Yellow;
+                    break;
+                case "Green":
+                    checkedColor = ConsoleColor.Green;
+                    break;
+                case "Blue":
+                    checkedColor = ConsoleColor.Blue;
+                    break;
+                default:
+                    Console.WriteLine("Invalid color input");
+                    break;
+            }
+            return checkedColor;
+        }
     }
-    enum Color
+    public enum Color
     {
-        Red = ConsoleColor.Red,
-        Yellow = ConsoleColor.Yellow,
-        Green = ConsoleColor.Green,
-        Blue = ConsoleColor.Blue,
-        Magenta = ConsoleColor.Magenta
+        Red,
+        Yellow,
+        Green,
+        Blue
     }
 }
