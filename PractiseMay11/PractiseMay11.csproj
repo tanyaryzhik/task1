@@ -44,9 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FigureTask\Circle.cs" />
+    <Compile Include="FigureTask\Diamond.cs" />
     <Compile Include="FigureTask\Figure.cs" />
     <Compile Include="FigureTask\Square.cs" />
     <Compile Include="FigureTask\Triangle.cs" />
+    <Compile Include="PlantsTask\Color.cs" />
+    <Compile Include="PlantsTask\Flower.cs" />
+    <Compile Include="PlantsTask\Gallery.cs" />
+    <Compile Include="PlantsTask\Plant.cs" />
+    <Compile Include="PlantsTask\Tree.cs" />
+    <Compile Include="PlantsTask\Worker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

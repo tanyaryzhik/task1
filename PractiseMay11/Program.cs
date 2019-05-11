@@ -43,7 +43,6 @@ namespace PractiseMay11
                     triangle.Draw();
                 }
             }
-            Console.ReadLine();
         }
     }
 }
