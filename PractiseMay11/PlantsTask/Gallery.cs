@@ -20,7 +20,11 @@ namespace PractiseMay11.PlantsTask
 
         public void Execute()
         {
-
+            Random random = new Random(10);
+            foreach (var item in plants)
+            {
+                worker.Care(random.Next(1, 10), random.Next(1, 10), item);
+            }
         }
     }
 }
