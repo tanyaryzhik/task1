@@ -39,11 +39,4 @@ namespace task1
             return checkedColor;
         }
     }
-    public enum Color
-    {
-        Red,
-        Yellow,
-        Green,
-        Blue
-    }
 }

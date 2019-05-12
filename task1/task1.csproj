@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Color.cs" />
     <Compile Include="ColorSet.cs" />
     <Compile Include="Handler.cs" />
     <Compile Include="MyClass.cs" />
