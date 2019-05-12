@@ -41,7 +41,6 @@ namespace task1
             while (true)
             {
                 Console.WriteLine("Enter pupil's birthday date");
-
                 if (DateTime.TryParse(Console.ReadLine(), out birthdate))
                     break;
             }
@@ -84,7 +83,7 @@ namespace task1
             Console.WriteLine(String.Format("{0,20 } {1,10 } {2,10 } {3,10 } {4,10 } \n\n", "Pupil", "Birth year", "Age", "School", "Form"));
             for (int i = 0; i < PupilsDataRepresenting.pupilsMaxNumber; i++)
             {
-                result = String.Format("{0,20 } {1,10 } {2,10 } {3,10 } {4,10 } \n\n", (i+1) + ". " + pupilsList[i].FirstName + " " + pupilsList[i].LastName,
+                result = String.Format("{0,20 } {1,10 } {2,10 } {3,10 } {4,10 } \n\n", (i + 1) + ". " + pupilsList[i].FirstName + " " + pupilsList[i].LastName,
                     pupilsList[i].BirthDate.Year, pupilsList[i].Age, pupilsList[i].SchoolNumber, pupilsList[i].Form);
                 Console.WriteLine(result);
             }
