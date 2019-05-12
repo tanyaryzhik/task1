@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace task1
 {
-    class ColorSet
+    internal class ColorSet
     {
         public Color color;
+
         public void Print(string text, string color)
         {
             Console.ForegroundColor = DetectColor(color);
