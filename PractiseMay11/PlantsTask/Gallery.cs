@@ -24,6 +24,16 @@ namespace PractiseMay11.PlantsTask
             foreach (var item in plants)
             {
                 worker.Care(random.Next(1, 10), random.Next(1, 10), item);
+                if (item is Flower)
+                {
+                    Flower flower = item as Flower;
+                    flower.Scent(random.Next(10));
+                }
+                if (item is Tree)
+                {
+                    Tree tree = item as Tree;
+                    tree.CreateShadow(random.Next(10));
+                }
             }
         }
     }

@@ -8,7 +8,7 @@ namespace PractiseMay11.PlantsTask
 {
     internal class Plant
     {
-        public string Type { get; set; }
+        public string Type { get; }
 
         public Color Color { get; set; }
         
@@ -23,7 +23,7 @@ namespace PractiseMay11.PlantsTask
 
         public void Drink(double waterAmount)
         {
-            Console.WriteLine($"Plant was poured with {waterAmount}l of water");
+            Console.WriteLine($"Plant was poured with 0.{waterAmount}l of water");
             Console.WriteLine("Plant has grown 1cm");
             this.Height++;
         }
@@ -31,7 +31,7 @@ namespace PractiseMay11.PlantsTask
         public void Eat(double mineralAmount)
         {
             this.Color++;
-            Console.WriteLine($"Plant leaves became{this.Color}");
+            Console.WriteLine($"Plant leaves became {this.Color}");
         }
 
         public void Breath(double waterAmount, double mineralAmount)
