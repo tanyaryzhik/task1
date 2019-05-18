@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PractiseMay11.FigureTask
+namespace PractiseMay18.FigureTask
 {
     internal class Figure
     {
@@ -16,6 +16,11 @@ namespace PractiseMay11.FigureTask
         {
             this.coordX = x;
             this.coordY = y;
+        }
+
+        public virtual void Draw()
+        {
+            
         }
     }
 }

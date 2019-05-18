@@ -1,11 +1,12 @@
-﻿using PractiseMay11.FigureTask;
+﻿using PractiseMay18.FigureTask;
+using PractiseMay18.Mammals;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PractiseMay11
+namespace PractiseMay18
 {
     class Program
     {
@@ -26,24 +27,41 @@ namespace PractiseMay11
                                               triangleFirst, triangleSecond, triangleThird};
             foreach (var item in figures)
             {
-                if (item is Circle)
-                {
-                    Circle circle = (Circle)item;
-                    circle.Draw();
-                }
+                //if (item is Circle)
+                //{
+                //    Circle circle = (Circle)item;
+                //    circle.Draw();
+                //}
 
-                if (item is Square square)
-                {
-                    square.Draw();
-                }
+                //if (item is Square square)
+                //{
+                //    square.Draw();
+                //}
 
-                if (item is Triangle triangle)
-                {
-                    triangle = item as Triangle;
-                    triangle.Draw();
-                }
+                //if (item is Triangle triangle)
+                //{
+                //    triangle = item as Triangle;
+                //    triangle.Draw();
+                //}
+
+                item.Draw();
             }
-            Console.ReadLine();
+            
+            Arboreal arborealBaby = new Arboreal(2);
+            Arboreal arborealAdult = new Arboreal(25);
+            Aquatic aquaticBaby = new Aquatic(4);
+            Aquatic aquaticAdult = new Aquatic(38);
+            Arial arialBaby = new Arial(1);
+            Arial arialAdult = new Arial(51);
+            Subterranean subterraneanBaby = new Subterranean(8);
+            Subterranean subterraneanAdult = new Subterranean(41);
+            Terrestrial terrestrialBaby = new Terrestrial(5);
+            Terrestrial terrestrialAdult = new Terrestrial(27);
+            Mammal[] mammals = new Mammal[] { arborealBaby, arborealAdult , aquaticBaby,
+                aquaticAdult , arialBaby , arialAdult , subterraneanBaby , subterraneanAdult, terrestrialBaby,terrestrialAdult};
+            Feeder feeder = new Feeder();
+            feeder.Feed(mammals);
+
         }
     }
 }

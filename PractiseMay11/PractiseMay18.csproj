@@ -47,6 +47,13 @@
     <Compile Include="FigureTask\Figure.cs" />
     <Compile Include="FigureTask\Square.cs" />
     <Compile Include="FigureTask\Triangle.cs" />
+    <Compile Include="Mammals\Aquatic.cs" />
+    <Compile Include="Mammals\Arboreal.cs" />
+    <Compile Include="Mammals\Arial.cs" />
+    <Compile Include="Mammals\Feeder.cs" />
+    <Compile Include="Mammals\Mammal.cs" />
+    <Compile Include="Mammals\Subterranean.cs" />
+    <Compile Include="Mammals\Terrestrial.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

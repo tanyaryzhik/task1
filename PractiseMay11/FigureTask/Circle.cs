@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PractiseMay11.FigureTask
+namespace PractiseMay18.FigureTask
 {
     class Circle : Figure
     {
@@ -16,7 +16,7 @@ namespace PractiseMay11.FigureTask
             this.Radius = radius;
         }
 
-        public void Draw()
+        public override void Draw()
         {
             Console.WriteLine($"The circle with a radius {this.Radius} is drawn. Center of circle is on x: {this.coordX}, y: {this.coordY}");
         }

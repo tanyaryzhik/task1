@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PractiseMay11.FigureTask
+namespace PractiseMay18.FigureTask
 {
     class Square : Figure
     {
@@ -16,7 +16,7 @@ namespace PractiseMay11.FigureTask
             this.Side = side;
         }
 
-        public void Draw()
+        public override void Draw()
         {
             Console.WriteLine($"The square with side {this.Side} is drawn. Center of square is on x: {this.coordX}, y: {this.coordY}");
         }

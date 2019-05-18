@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PractiseMay11.FigureTask
+namespace PractiseMay18.FigureTask
 {
     internal class Triangle : Figure
     {
@@ -19,7 +19,7 @@ namespace PractiseMay11.FigureTask
             this.Height = height;
         }
 
-        public void Draw()
+        public override void Draw()
         {
             Console.WriteLine($"The triangle with base {this.BaseSide} and height {this.Height} is drawn. Center of triangle is on x: {this.coordX}, y: {this.coordY}");
         }
