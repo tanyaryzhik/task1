@@ -49,7 +49,7 @@ namespace PractiseMay18
 
                 item.Draw();
             }
-            
+
             Arboreal arborealBaby = new Arboreal(2);
             Arboreal arborealAdult = new Arboreal(25);
             Aquatic aquaticBaby = new Aquatic(4);
@@ -91,7 +91,6 @@ namespace PractiseMay18
                 item.Bite();
                 if (item is IPurr purringAnimal)
                     purringAnimal.Purr();
-
             }
         }
     }
