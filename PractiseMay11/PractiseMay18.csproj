@@ -43,10 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatorTask\Calculator.cs" />
+    <Compile Include="CalculatorTask\DivideOperation.cs" />
+    <Compile Include="CalculatorTask\MultiplyOperation.cs" />
+    <Compile Include="CalculatorTask\Operation.cs" />
+    <Compile Include="CalculatorTask\SubstractOperation.cs" />
+    <Compile Include="CalculatorTask\Sum.cs" />
     <Compile Include="FigureTask\Circle.cs" />
     <Compile Include="FigureTask\Figure.cs" />
     <Compile Include="FigureTask\Square.cs" />
     <Compile Include="FigureTask\Triangle.cs" />
+    <Compile Include="Humans\English.cs" />
+    <Compile Include="Humans\Human.cs" />
+    <Compile Include="Humans\Ukrainian.cs" />
     <Compile Include="Mammals\Aquatic.cs" />
     <Compile Include="Mammals\Arboreal.cs" />
     <Compile Include="Mammals\Arial.cs" />

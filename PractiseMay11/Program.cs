@@ -1,5 +1,7 @@
 ﻿using PractiseMay18.FigureTask;
+using PractiseMay18.Humans;
 using PractiseMay18.Mammals;
+using PractiseMay18.CalculatorTask;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,6 +64,13 @@ namespace PractiseMay18
             Feeder feeder = new Feeder();
             feeder.Feed(mammals);
 
+            Ukrainian vasia = new Ukrainian("Vasia");
+            English john = new English("John");
+            vasia.SayHello();
+            john.SayHello();
+
+            Calculator calculator = new Calculator(45.51, 9.5);
+            calculator.LaunchCalculation();
         }
     }
 }
