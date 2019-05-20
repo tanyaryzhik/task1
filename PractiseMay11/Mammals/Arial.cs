@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace PractiseMay18.Mammals
 {
-    internal class Arial: Mammal
+    internal class Aerial: Mammal
     {
         protected override int WeightIncrease { get => 3; }
-        public Arial(int age) : base(age)
+
+        public Aerial(int age) : base(age)
         {
 
+        }
+        public override void Move()
+        {
+            Console.WriteLine("It flies");
         }
     }
 }

@@ -9,9 +9,16 @@ namespace PractiseMay18.Mammals
     internal class Terrestrial : Mammal
     {
         protected override int WeightIncrease { get => 1; }
-        public Terrestrial(int age) : base(age)
+
+        public Terrestrial(int age)
+            : base(age)
         {
 
+        }
+
+        public override void Move()
+        {
+            Console.WriteLine("It walks");
         }
     }
 }

@@ -9,9 +9,15 @@ namespace PractiseMay18.Mammals
     internal class Aquatic : Mammal
     {
         protected override int WeightIncrease { get => 4; }
+
         public Aquatic(int age) : base(age)
         {
 
+        }
+
+        public override void Move()
+        {
+            Console.WriteLine("It swims");
         }
     }
 }

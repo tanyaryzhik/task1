@@ -9,9 +9,15 @@ namespace PractiseMay18.Mammals
     internal class Subterranean : Mammal
     {
         protected override int WeightIncrease { get => 2; }
+
         public Subterranean(int age) : base(age)
         {
 
+        }
+
+        public override void Move()
+        {
+            Console.WriteLine("It digs");
         }
     }
 }

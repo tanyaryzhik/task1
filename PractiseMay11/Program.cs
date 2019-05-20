@@ -53,8 +53,8 @@ namespace PractiseMay18
             Arboreal arborealAdult = new Arboreal(25);
             Aquatic aquaticBaby = new Aquatic(4);
             Aquatic aquaticAdult = new Aquatic(38);
-            Arial arialBaby = new Arial(1);
-            Arial arialAdult = new Arial(51);
+            Aerial arialBaby = new Aerial(1);
+            Aerial arialAdult = new Aerial(51);
             Subterranean subterraneanBaby = new Subterranean(8);
             Subterranean subterraneanAdult = new Subterranean(41);
             Terrestrial terrestrialBaby = new Terrestrial(5);
@@ -63,6 +63,10 @@ namespace PractiseMay18
                 aquaticAdult , arialBaby , arialAdult , subterraneanBaby , subterraneanAdult, terrestrialBaby,terrestrialAdult};
             Feeder feeder = new Feeder();
             feeder.Feed(mammals);
+            foreach (var item in mammals)
+            {
+                item.Move();
+            }
 
             Ukrainian vasia = new Ukrainian("Vasia");
             English john = new English("John");
