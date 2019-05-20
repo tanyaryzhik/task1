@@ -53,6 +53,11 @@
     <Compile Include="FigureTask\Figure.cs" />
     <Compile Include="FigureTask\Square.cs" />
     <Compile Include="FigureTask\Triangle.cs" />
+    <Compile Include="FurAnimals\Animal.cs" />
+    <Compile Include="FurAnimals\Cat.cs" />
+    <Compile Include="FurAnimals\Dog.cs" />
+    <Compile Include="FurAnimals\IPurr.cs" />
+    <Compile Include="FurAnimals\Lynx.cs" />
     <Compile Include="Humans\English.cs" />
     <Compile Include="Humans\Human.cs" />
     <Compile Include="Humans\Ukrainian.cs" />
