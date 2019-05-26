@@ -32,7 +32,12 @@ namespace PractiseMay18.CalculatorTask
 
         public double PerformCalculation(Operation operation, double firstNum, double secondNum)
         {
-            return operation.PerformOperation(firstNum, secondNum);
+            if (operation == null)
+                throw new ArgumentNullException();
+            if (operation == Divide && secondNum == 0.0)
+                throw new DivideByZeroException();
+            else
+                return operation.PerformOperation(firstNum, secondNum);
         }
 
         public void LaunchCalculation()

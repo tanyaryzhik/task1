@@ -74,7 +74,7 @@ namespace PractiseMay18
             vasia.SayHello();
             john.SayHello();
 
-            Calculator calculator = new Calculator(45.51, 9.5);
+            Calculator calculator = new Calculator(45.51, 10.0);
             calculator.LaunchCalculation();
 
             Animal[] arrAnimal = new Animal[8];
