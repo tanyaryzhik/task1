@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PractiseMay11.FigureTask
 {
-    class Circle : Figure
+    internal class Circle : Figure
     {
         public double Radius { get; set; }
 

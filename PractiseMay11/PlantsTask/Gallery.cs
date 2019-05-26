@@ -8,14 +8,20 @@ namespace PractiseMay11.PlantsTask
 {
     internal class Gallery
     {
-        public Plant[] plants;
+        private Plant[] plants;
 
-        public Worker worker;
+        private Worker worker;
 
         public Gallery(Plant[] plants, Worker worker)
         {
-            this.plants = plants;
-            this.worker = worker;
+            if (plants.Any<Plant>())
+                this.plants = plants;
+            else
+                throw new ArgumentNullException();
+            if (worker != null)
+                this.worker = worker;
+            else
+                throw new ArgumentNullException();
         }
 
         public void Execute()
@@ -24,14 +30,14 @@ namespace PractiseMay11.PlantsTask
             foreach (var item in plants)
             {
                 worker.Care(random.Next(1, 10), random.Next(1, 10), item);
-                if (item is Flower)
+                if (item is Flower flower)
                 {
-                    Flower flower = item as Flower;
+                    flower = item as Flower;
                     flower.Scent(random.Next(10));
                 }
-                if (item is Tree)
+                if (item is Tree tree)
                 {
-                    Tree tree = item as Tree;
+                    tree = item as Tree;
                     tree.CreateShadow(random.Next(10));
                 }
             }

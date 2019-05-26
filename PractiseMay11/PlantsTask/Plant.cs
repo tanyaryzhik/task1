@@ -23,22 +23,32 @@ namespace PractiseMay11.PlantsTask
 
         public void Drink(double waterAmount)
         {
-            Console.WriteLine($"Plant was poured with 0.{waterAmount}l of water");
-            Console.WriteLine("Plant has grown 1cm");
-            this.Height++;
+            if (waterAmount > 0)
+            {
+                Console.WriteLine($"Plant was poured with 0.{waterAmount}l of water");
+                Console.WriteLine("Plant has grown 1cm");
+                this.Height++;
+            }
+            else
+                throw new ArgumentException();
         }
 
         public void Eat(double mineralAmount)
         {
-            this.Color++;
-            Console.WriteLine($"Plant leaves became {this.Color}");
+            if (mineralAmount > 0)
+            {
+                this.Color++;
+                Console.WriteLine($"Plant leaves became {this.Color}");
+            }
+            else
+                throw new ArgumentException();
         }
 
         public void Breath(double waterAmount, double mineralAmount)
         {
-            Console.WriteLine("Plant has given 0.5l of oxigen");
             Eat(mineralAmount);
             Drink(waterAmount);
+            Console.WriteLine("Plant has given 0.5l of oxigen");
         }
     }
 }
