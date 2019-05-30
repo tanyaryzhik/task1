@@ -1,4 +1,5 @@
-﻿using InterfaceTask.Switcher;
+﻿using InterfaceTask.Bank;
+using InterfaceTask.Switcher;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace InterfaceTask
     {
         static void Main(string[] args)
         {
-            new Manager().Manage();
+            //new Manager().Manage();
+            new BankManager().Execute();
         }
     }
 }
