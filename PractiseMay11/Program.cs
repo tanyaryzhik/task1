@@ -98,7 +98,7 @@ namespace PractiseMay18
                 //}
                 if (item is IPurr)
                 {
-
+                    IPurr purringAnimal = (IPurr) item;
                     purringAnimal.Purr();
                 }
             }
