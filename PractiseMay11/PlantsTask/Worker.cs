@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PractiseMay11.PlantsTask
 {
-    internal class Worker
+    public class Worker
     {
         public void Care(int waterAmount, int mineralAmount, Plant plant)
         {

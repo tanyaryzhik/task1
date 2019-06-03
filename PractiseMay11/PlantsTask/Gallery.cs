@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PractiseMay11.PlantsTask
 {
-    internal class Gallery
+    public class Gallery
     {
         private Plant[] plants;
 

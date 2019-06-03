@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PractiseMay11.PlantsTask
 {
-    internal class Plant
+    public class Plant
     {
         public string Type { get; }
 

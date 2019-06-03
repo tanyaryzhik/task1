@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PractiseMay11.PlantsTask
 {
-    internal class Flower : Plant
+    public class Flower : Plant
     {
-        public int burgeonAmount;
+        private int burgeonAmount;
 
         public Flower(string type, int height, int burgeons)
             : base(type, height)

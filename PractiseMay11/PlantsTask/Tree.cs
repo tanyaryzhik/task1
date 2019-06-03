@@ -8,7 +8,7 @@ namespace PractiseMay11.PlantsTask
 {
     internal class Tree : Plant
     {
-        public int maxBranchLength;
+        private int maxBranchLength;
 
         public Tree(string type, int height, int length)
             : base(type, height)
