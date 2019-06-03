@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PractiseMay18.FigureTask
 {
-    class Square : Figure
+    public class Square : Figure
     {
-        public double Side { get; set; }
+        public double Side { get; }
 
         public Square(double x, double y, double side)
             : base(x, y)
@@ -18,7 +18,7 @@ namespace PractiseMay18.FigureTask
 
         public override void Draw()
         {
-            Console.WriteLine($"The square with side {this.Side} is drawn. Center of square is on x: {this.coordX}, y: {this.coordY}");
+            Console.WriteLine($"The square with side {this.Side} is drawn. Center of square is on x: {this.CoordX}, y: {this.CoordY}");
         }
     }
 }

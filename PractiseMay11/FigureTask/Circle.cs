@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PractiseMay18.FigureTask
 {
-    class Circle : Figure
+    public class Circle : Figure
     {
-        public double Radius { get; set; }
+        public double Radius { get; }
 
         public Circle(double x, double y, double radius)
             : base(x, y)
@@ -18,7 +18,7 @@ namespace PractiseMay18.FigureTask
 
         public override void Draw()
         {
-            Console.WriteLine($"The circle with a radius {this.Radius} is drawn. Center of circle is on x: {this.coordX}, y: {this.coordY}");
+            Console.WriteLine($"The circle with a radius {this.Radius} is drawn. Center of circle is on x: {this.CoordX}, y: {this.CoordY}");
         }
     }
 }

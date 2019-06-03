@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace PractiseMay18.FigureTask
 {
-    internal class Figure
+    public class Figure
     {
-        public double coordX { get; set; }
+        public double CoordX { get; set; }
 
-        public double coordY { get; set; }
+        public double CoordY { get; set; }
 
         public Figure(double x, double y)
         {
-            this.coordX = x;
-            this.coordY = y;
+            this.CoordX = x;
+            this.CoordY = y;
         }
 
         public virtual void Draw()

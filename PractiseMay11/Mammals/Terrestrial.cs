@@ -13,7 +13,6 @@ namespace PractiseMay18.Mammals
         public Terrestrial(int age)
             : base(age)
         {
-
         }
 
         public override void Move()

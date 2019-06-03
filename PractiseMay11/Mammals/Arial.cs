@@ -10,10 +10,11 @@ namespace PractiseMay18.Mammals
     {
         protected override int WeightIncrease { get => 3; }
 
-        public Aerial(int age) : base(age)
+        public Aerial(int age)
+            : base(age)
         {
-
         }
+
         public override void Move()
         {
             Console.WriteLine("It flies");

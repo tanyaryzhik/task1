@@ -30,7 +30,7 @@ namespace PractiseMay18.CalculatorTask
             this.Divide = new DivideOperation();
         }
 
-        public double PerformCalculation(Operation operation, double firstNum, double secondNum)
+        private double PerformCalculation(Operation operation, double firstNum, double secondNum)
         {
             if (operation == null)
                 throw new ArgumentNullException();

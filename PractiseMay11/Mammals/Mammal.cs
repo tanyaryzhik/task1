@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PractiseMay18.Mammals
 {
-    internal class Mammal
+    public class Mammal
     {
         private readonly int age;
 
@@ -16,24 +16,24 @@ namespace PractiseMay18.Mammals
 
         public int Age
         {
-            get { return age; }
+            get { return this.age; }
         }
 
         public int Weight
         {
-            get { return weight; }
+            get { return this.weight; }
             protected set { weight = value; }
         }
 
         public Mammal(int age)
         {
             this.age = age;
-            Weight = 1;
+            this.Weight = 1;
         }
 
         public virtual void Eat(int foodAmount)
         {
-            if (Age <= 12)
+            if (this.Age <= 12)
                 Console.WriteLine("Feed animal with milk");
             else
                 Console.WriteLine("Feed animal with food for adults");

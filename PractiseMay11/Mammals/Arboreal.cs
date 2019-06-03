@@ -10,9 +10,9 @@ namespace PractiseMay18.Mammals
     {
         protected override int WeightIncrease { get => 5; }
 
-        public Arboreal(int age) : base(age)
+        public Arboreal(int age)
+            : base(age)
         {
-
         }
 
         public override void Move()
