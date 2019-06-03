@@ -89,8 +89,18 @@ namespace PractiseMay18
             foreach (Animal item in arrAnimal)
             {
                 item.Bite();
-                if (item is IPurr purringAnimal)
+                // if (item is IPurr purringAnimal)
+                //   purringAnimal.Purr();
+                //if (item is IPurr)
+                //{
+                //    IPurr purringAnimal = item as IPurr;
+                //    purringAnimal.Purr();
+                //}
+                if (item is IPurr)
+                {
+
                     purringAnimal.Purr();
+                }
             }
         }
     }
