@@ -1,4 +1,4 @@
-﻿using InterfaceTask.Bank;
+﻿using InterfaceTask.BankAccounts;
 using InterfaceTask.Switcher;
 using System;
 using System.Collections.Generic;

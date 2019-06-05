@@ -8,9 +8,9 @@ namespace InterfaceTask.Switcher
 {
     public class Lamp : ISwitchable
     {
-        public string Name { get; }
+        public string Name { get; set; }
 
-        public State state;
+        public State StateOfLamp { get; set; }
 
         public Lamp(string name)
         {
@@ -19,13 +19,13 @@ namespace InterfaceTask.Switcher
 
         public void TurnOn()
         {
-            this.state = State.On;
+            this.StateOfLamp = State.On;
             Console.WriteLine($"Lamp {this.Name} is switched on");
         }
 
         public void TurnOff()
         {
-            this.state = State.Off;
+            this.StateOfLamp = State.Off;
             Console.WriteLine($"Lamp {this.Name} is switched off");
         }
     }

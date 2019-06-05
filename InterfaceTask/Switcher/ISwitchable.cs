@@ -9,6 +9,7 @@ namespace InterfaceTask.Switcher
     public interface ISwitchable
     {
         void TurnOn();
+
         void TurnOff();
     }
 }

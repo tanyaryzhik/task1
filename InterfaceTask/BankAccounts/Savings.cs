@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterfaceTask.Bank
+namespace InterfaceTask.BankAccounts
 {
     public class Savings : Account, IBalanceAccessible
     {
-        public Savings(string owner, decimal balance)
-            : base(owner, balance)
+        public Savings(string owner, decimal balance, int id)
+            : base(owner, balance, id)
         {
 
         }

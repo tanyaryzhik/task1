@@ -10,7 +10,7 @@ namespace InterfaceTask.Switcher
     {
         public string Name { get; }
 
-        public State state;
+        public State StateOfElApp { get; set; }
 
         public ElectricalAppliance(string name)
         {
@@ -19,13 +19,13 @@ namespace InterfaceTask.Switcher
 
         public void TurnOn()
         {
-            this.state = State.On;
+            this.StateOfElApp = State.On;
             Console.WriteLine($"Electrical appliance {this.Name} is switched on");
         }
 
         public void TurnOff()
         {
-            this.state = State.Off;
+            this.StateOfElApp = State.Off;
             Console.WriteLine($"Electrical appliance {this.Name} is switched off");
         }
     }

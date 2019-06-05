@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterfaceTask.Bank
+namespace InterfaceTask.BankAccounts
 {
-    public interface IInterestChargeable
+    public interface IInterestCountable
     {
         void SetInterestRate(decimal interestRate);
-        void ChargeInterest();
+
+        void UpdateBalanceWithInterest();
     }
 }
