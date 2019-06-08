@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace task1
+namespace PracticeJune8
 {
     class Program
     {
         static void Main(string[] args)
         {
-
+            //new SystemScheme().Execute();
+            new TextFile().Execute();
         }
     }
 }
