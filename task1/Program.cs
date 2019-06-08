@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using task1;
 
 namespace PracticeJune8
 {
@@ -11,7 +12,8 @@ namespace PracticeJune8
         static void Main(string[] args)
         {
             //new SystemScheme().Execute();
-            new TextFile().Execute();
+            //new TextFile().Execute();
+            new FileInnerCounter().Execute();
         }
     }
 }

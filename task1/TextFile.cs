@@ -19,6 +19,5 @@ namespace PracticeJune8
             string text = Console.ReadLine();
             File.AppendAllText(path, text);
         }
-
     }
 }
