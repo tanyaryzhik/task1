@@ -11,9 +11,9 @@ namespace PracticeJune8
     {
         static void Main(string[] args)
         {
-            //new SystemScheme().Execute();
+            new SystemScheme().Execute();
             //new TextFile().Execute();
-            new FileInnerCounter().Execute();
+            //new FileInnerCounter().Execute();
         }
     }
 }

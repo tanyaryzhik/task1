@@ -19,13 +19,39 @@ namespace PracticeJune8
             {
                 counter++;
             }
-            FileInfo[] files  = dir.GetFiles();
             long size = 0;
-            foreach (var item in files)
-            {
-                size += item.Length;
-            }
+            size = GetDirectorySize(path, size);
+            //FileInfo[] files = dir.GetFiles();
+            //foreach (var item in files)
+            //{
+            //    size += item.Length;
+            //}
             Console.WriteLine($"Number of directories is {counter}. Size: {size}");
+        }
+
+        private long GetDirectorySize(string directoryPath, long size)
+        {
+            DirectoryInfo dir = new DirectoryInfo(directoryPath);
+            try
+            {
+                if (Directory.GetDirectories(directoryPath).Length == 0)
+                {
+                    foreach (FileInfo item in dir.GetFiles())
+                    {
+                        size += item.Length;
+                    }
+                }
+                else
+                    foreach (var item in Directory.GetDirectories(directoryPath))
+                    {
+                        size += GetDirectorySize(item, size);
+                    }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return size;
         }
     }
 }
