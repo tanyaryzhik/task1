@@ -10,6 +10,7 @@ namespace PracticeJune8
     public class SystemScheme
     {
         private const string path = "C:\\Windows\\System32";
+        //private const string path = "C:\\Users\\user\\Documents";
 
         public void Execute()
         {
@@ -44,6 +45,7 @@ namespace PracticeJune8
                 else
                     foreach (var item in Directory.GetDirectories(directoryPath))
                     {
+                        Console.WriteLine(item);
                         size += GetDirectorySize(item, size);
                     }
             }
