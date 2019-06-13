@@ -9,11 +9,11 @@ namespace task1
 {
     public class FileInnerCounter
     {
-        private const string path = "C:\\Temp\\UserText.txt";
+        private const string Path = "C:\\Temp\\UserText.txt";
 
         public void Execute()
         {
-            string text = File.ReadAllText(path);
+            string text = File.ReadAllText(FileInnerCounter.Path);
             int symbolsAmount = text.Length;
             string[] strings = text.Split('\n');
             int stringsAmount = strings.Length;

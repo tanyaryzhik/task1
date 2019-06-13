@@ -9,19 +9,19 @@ namespace PracticeJune8
 {
     public class SystemScheme
     {
-        private const string path = "C:\\Windows\\System32";
-        //private const string path = "C:\\Users\\user\\Documents";
-
+        private const string Path = "C:\\Windows\\System32";
+        //private const string Path = "C:\\Users\\user\\Documents";
+        
         public void Execute()
         {
             int counter = 0;
-            DirectoryInfo dir = new DirectoryInfo(path);
+            DirectoryInfo dir = new DirectoryInfo(Path);
             foreach (var item in dir.GetDirectories())
             {
                 counter++;
             }
             long size = 0;
-            size = GetDirectorySize(path, size);
+            size = GetDirectorySize(Path, size);
             //FileInfo[] files = dir.GetFiles();
             //foreach (var item in files)
             //{
@@ -43,15 +43,17 @@ namespace PracticeJune8
                     }
                 }
                 else
+                {
                     foreach (var item in Directory.GetDirectories(directoryPath))
                     {
                         Console.WriteLine(item);
                         size += GetDirectorySize(item, size);
                     }
+                }
             }
-            catch(Exception ex)
+            catch(Exception exeption)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(exeption.Message);
             }
             return size;
         }
