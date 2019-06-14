@@ -9,9 +9,9 @@ namespace PracticeJune8
 {
     public class SystemScheme
     {
-        private const string Path = "C:\\Windows\\System32";
-        //private const string Path = "C:\\Users\\user\\Documents";
-        
+        //private const string Path = "C:\\Windows\\System32";
+        private const string Path = "C:\\Users\\user\\source";
+
         public void Execute()
         {
             int counter = 0;
@@ -20,8 +20,7 @@ namespace PracticeJune8
             {
                 counter++;
             }
-            long size = 0;
-            size = GetDirectorySize(Path, size);
+            long size = GetDirectorySize(Path);
             //FileInfo[] files = dir.GetFiles();
             //foreach (var item in files)
             //{
@@ -30,28 +29,26 @@ namespace PracticeJune8
             Console.WriteLine($"Number of directories is {counter}. Size: {size}");
         }
 
-        private long GetDirectorySize(string directoryPath, long size)
+        private long GetDirectorySize(string directoryPath)
         {
+            long size = 0;
             DirectoryInfo dir = new DirectoryInfo(directoryPath);
             try
             {
-                if (Directory.GetDirectories(directoryPath).Length == 0)
+                foreach (FileInfo item in dir.GetFiles())
                 {
-                    foreach (FileInfo item in dir.GetFiles())
-                    {
-                        size += item.Length;
-                    }
+                    size += item.Length;
                 }
-                else
+                if (Directory.GetDirectories(directoryPath).Length != 0)
                 {
                     foreach (var item in Directory.GetDirectories(directoryPath))
                     {
                         Console.WriteLine(item);
-                        size += GetDirectorySize(item, size);
+                        size += GetDirectorySize(item);
                     }
                 }
             }
-            catch(Exception exeption)
+            catch (Exception exeption)
             {
                 Console.WriteLine(exeption.Message);
             }
