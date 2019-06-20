@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace task1
+namespace PractiseJune14
 {
-    class Program
+    public interface ICar
     {
-        static void Main(string[] args)
-        {
+       string Name { get; set; }
 
-        }
+       int Year { get; set; }
     }
 }
