@@ -16,6 +16,7 @@ namespace PractiseJune14.SingleLinkedList
         {
             if (value == null)
                 throw new ArgumentNullException();
+
             this.Value = value;
         }
 

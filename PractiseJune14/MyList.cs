@@ -8,7 +8,7 @@ namespace PractiseJune14
 {
     public class MyList<T> : IMyList<T>
     {
-        public T[] Array { get; set; }
+        protected T[] Array { get; set; }
 
         public T this[int index]
         {
@@ -16,6 +16,7 @@ namespace PractiseJune14
             {
                 if (index > this.Array.Length - 1)
                     throw new IndexOutOfRangeException();
+
                 return this.Array[index];
             }
         }
@@ -43,8 +44,7 @@ namespace PractiseJune14
 
         public void Clear()
         {
-            T[] newArray = new T[this.Array.Length];
-            this.Array = newArray;
+            this.Array = new T[this.Array.Length];
         }
 
         public bool Contains(T item)

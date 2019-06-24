@@ -13,18 +13,16 @@ namespace PractiseJune14
             get
             {
                 T result = default(T);
+
                 if (String.IsNullOrEmpty(indexName))
-                {
                     throw new ArgumentException();
-                }
-                else
+                
+                for (int i = 0; i < this.Array.Length; i++)
                 {
-                    for (int i = 0; i < this.Array.Length; i++)
-                    {
-                        if (this.Array[i].Name.Equals(indexName))
-                            result = this.Array[i];
-                    }
+                    if (this.Array[i].Name.Equals(indexName))
+                        result = this.Array[i];
                 }
+                
                 return result;
             }
         }
