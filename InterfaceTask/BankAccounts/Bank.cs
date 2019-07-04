@@ -52,16 +52,15 @@ namespace InterfaceTask.BankAccounts
             {
                 if (item.Id == id)
                 {
-                    if (item is CreditCard creditAccount)
+                    if (item is IInterestCountable account)
                     {
-                        creditAccount = (CreditCard)item;
-                        creditAccount.CurrentBalance += creditAccount.InterestRate * creditAccount.CurrentBalance;
+                        account.UpdateBalanceWithInterest();
                     }
-                    if (item is Deposit depositAccount)
-                    {
-                        depositAccount = (Deposit)item;
-                        depositAccount.CurrentBalance += depositAccount.InterestRate * depositAccount.CurrentBalance;
-                    }
+                    //if (item is Deposit depositAccount)
+                    //{
+                    //    depositAccount = (Deposit)item;
+                    //    depositAccount.CurrentBalance += depositAccount.InterestRate * depositAccount.CurrentBalance;
+                    //}
                 }
             }
         }
