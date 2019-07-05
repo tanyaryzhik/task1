@@ -43,8 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirConditioner.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="Fan.cs" />
+    <Compile Include="Fridge.cs" />
+    <Compile Include="Interfaces\IBlow.cs" />
+    <Compile Include="Interfaces\ISwitchable.cs" />
+    <Compile Include="Interfaces\ITemperature.cs" />
+    <Compile Include="MultimediaDevice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartSpeaker.cs" />
+    <Compile Include="TV.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
