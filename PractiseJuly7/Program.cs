@@ -14,7 +14,42 @@ namespace PractiseJuly7
             //{
             //    Console.WriteLine($"{item.FirstName}, {item.BirthDate.ToShortDateString()}");
             //}
-            DeferedExample();
+            //DeferedExample();
+            CollectionExample();
+        }
+
+        public static void CollectionExample()
+        {
+            Employee[] firstCollection = new Employee[] {
+                new Employee{ FirstName = "Tatiana", LastName = "Ryzhik", Age = 38, Gender = "F", Company = "ParkMe"},
+               new Employee{ FirstName = "Olga", LastName = "Pavlenko", Age = 36, Gender = "F", Company = "ParkMe"},
+               new Employee{ FirstName = "Helen", LastName = "Zub", Age = 20, Gender = "F", Company = "Max"},
+               new Employee{ FirstName = "Kirill", LastName = "Novikov", Age = 26, Gender = "M", Company = "ParkMe"},
+            };
+            Employee[] secondCollection = new Employee[] {
+                new Employee{ FirstName = "Helen", LastName = "Zub", Age = 20, Gender = "F", Company = "Max"},
+               new Employee{ FirstName = "Kirill", LastName = "Novikov", Age = 26, Gender = "M", Company = "ParkMe"},
+               new Employee{ FirstName = "Alex", LastName = "Matsegora", Age = 25, Gender = "M", Company = "Max"},
+               new Employee{ FirstName = "Oleg", LastName = "Reshetilo", Age = 26, Gender = "M", Company = "Admin"},
+               new Employee{ FirstName = "Valeriy", LastName = "Malinovskiy", Age = 22, Gender = "M", Company = "Here"},
+            };
+
+            var collectionWithDuplicates = firstCollection.Concat(secondCollection).ToList();
+            Console.WriteLine("With duplicates:");
+            Display(collectionWithDuplicates);
+
+            var collectionWithoutDuplicates = firstCollection.Union(secondCollection).ToList();
+            Console.WriteLine("Without duplicates:");
+            Display(collectionWithoutDuplicates);
+
+            var collectionIntersection = firstCollection.Intersect(secondCollection).ToArray();
+            Console.WriteLine("Employees in both collections (intersection):");
+            Display(collectionIntersection);
+
+            List<Employee> firstList = firstCollection.ToList();
+            firstList.Add(new Employee { FirstName = "Jane", LastName = "Gladysheva", Age = 25, Gender = "F", Company = "Here" });
+            Console.WriteLine("Employees of first collection plus one more:");
+            Display(firstList);
         }
         public static void DeferedExample()
         {
@@ -74,7 +109,7 @@ namespace PractiseJuly7
             Console.WriteLine($"The first employee is {employees.First().LastName}");
             Console.WriteLine($"The last employee is {employees.Last().LastName}");
             Console.WriteLine($"The first employee older than 25 is {employees.Where(e => e.Age > 25).First().LastName}");
-            var pupil = employees.Where(e => e.FirstName == "Oleg").Select(p => new { FirstName = p.FirstName,LastName = p.LastName, School = 154});
+            var pupil = employees.Where(e => e.FirstName == "Oleg").Select(p => new { FirstName = p.FirstName, LastName = p.LastName, School = 154 });
         }
 
         private static void Display(IEnumerable<Employee> employees)
