@@ -8,21 +8,27 @@ namespace PractiseJuly7
 {
     public class Employee
     {
-        public Int32 Id { get; set; }
-        public String FirstName { get; set; }
-        public String LastName { get; set; }
-        public String Gender { get; set; }
-        public DateTime BirthDate { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Age { get; set; }
+        public string Gender { get; set; }
+        public string Company { get; set; }
 
 
         public static IEnumerable<Employee> GetEmployees()
         {
             return new List<Employee>
             {
-               new Employee{Id = 1, FirstName = "Eddard", LastName = "Stark", Gender = "M", BirthDate = new DateTime(1950,1,25)},
-               new Employee{Id = 2, FirstName = "Jon", LastName = "Snow", Gender = "M", BirthDate = new DateTime(1975,5,10)},
-               new Employee{Id = 3, FirstName = "Tyron", LastName = "Lannister", Gender = "M", BirthDate = new DateTime(1967,8,12)},
-               new Employee{Id = 4, FirstName = "Cersei", LastName = "Lannister", Gender = "F", BirthDate = new DateTime(1960,12,6)}
+               new Employee{ FirstName = "Tatiana", LastName = "Ryzhik", Age = 38, Gender = "F", Company = "ParkMe"},
+               new Employee{ FirstName = "Olga", LastName = "Pavlenko", Age = 36, Gender = "F", Company = "ParkMe"},
+               new Employee{ FirstName = "Helen", LastName = "Zub", Age = 20, Gender = "F", Company = "Max"},
+               new Employee{ FirstName = "Kirill", LastName = "Novikov", Age = 26, Gender = "M", Company = "ParkMe"},
+               new Employee{ FirstName = "Alex", LastName = "Matsegora", Age = 25, Gender = "M", Company = "Max"},
+               new Employee{ FirstName = "Oleg", LastName = "Reshetilo", Age = 26, Gender = "M", Company = "Admin"},
+               new Employee{ FirstName = "Valeriy", LastName = "Malinovskiy", Age = 22, Gender = "M", Company = "Here"},
+               new Employee{ FirstName = "Anton", LastName = "Isaev", Age = 23, Gender = "M", Company = "Here"},
+               new Employee{ FirstName = "Jane", LastName = "Gladysheva", Age = 25, Gender = "F", Company = "Here"},
+               new Employee{ FirstName = "Artem", LastName = "Kravchenko", Age = 22, Gender = "M", Company = "ParkMe"},
             };
         }
     }
