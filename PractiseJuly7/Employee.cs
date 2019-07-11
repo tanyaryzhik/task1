@@ -9,11 +9,14 @@ namespace PractiseJuly7
     public class Employee : IEquatable<Employee>
     {
         public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
-        public string Gender { get; set; }
-        public string Company { get; set; }
 
+        public string LastName { get; set; }
+
+        public int Age { get; set; }
+
+        public string Gender { get; set; }
+
+        public string Company { get; set; }
 
         public static IEnumerable<Employee> GetEmployees()
         {
@@ -45,6 +48,10 @@ namespace PractiseJuly7
         }
 
         public override bool Equals(object obj) => Equals(obj as Employee);
-        public override int GetHashCode() => base.GetHashCode();
+
+        public override int GetHashCode()
+        {
+            return Tuple.Create(FirstName, LastName, Age, Gender, Company).GetHashCode();
+        }
     }
-  }
+}
