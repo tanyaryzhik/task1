@@ -34,15 +34,15 @@ namespace PractiseJuly7
                new Employee{ FirstName = "Valeriy", LastName = "Malinovskiy", Age = 22, Gender = "M", Company = "Here"},
             };
 
-            var collectionWithDuplicates = firstCollection.Concat(secondCollection).ToList();
+            var collectionWithDuplicates = firstCollection.Concat(secondCollection);
             Console.WriteLine("With duplicates:");
             Display(collectionWithDuplicates);
 
-            var collectionWithoutDuplicates = firstCollection.Union(secondCollection).ToList();
+            var collectionWithoutDuplicates = firstCollection.Union(secondCollection);
             Console.WriteLine("Without duplicates:");
             Display(collectionWithoutDuplicates);
 
-            var collectionIntersection = firstCollection.Intersect(secondCollection).ToArray();
+            var collectionIntersection = firstCollection.Intersect(secondCollection);
             Console.WriteLine("Employees in both collections (intersection):");
             Display(collectionIntersection);
 

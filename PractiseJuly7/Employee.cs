@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PractiseJuly7
 {
-    public class Employee
+    public class Employee : IEquatable<Employee>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -31,5 +31,20 @@ namespace PractiseJuly7
                new Employee{ FirstName = "Artem", LastName = "Kravchenko", Age = 22, Gender = "M", Company = "ParkMe"},
             };
         }
+
+        public bool Equals(Employee employee)
+        {
+            if (employee is null)
+                return false;
+
+            return this.FirstName == employee.FirstName
+                && this.LastName == employee.LastName
+                && this.Age == employee.Age
+                && this.Gender == employee.Gender
+                && this.Company == employee.Company;
+        }
+
+        public override bool Equals(object obj) => Equals(obj as Employee);
+        public override int GetHashCode() => base.GetHashCode();
     }
-}
+  }
