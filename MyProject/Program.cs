@@ -10,6 +10,17 @@ namespace MyProject
     {
         static void Main(string[] args)
         {
+            //using (MyClass instance = new MyClass())
+            //{
+            //    instance.ReadFile();
+            //}
+
+            //MyClass instance2 = new MyClass();
+            //instance2.ReadFile();
+            //instance2.Dispose();
+
+            MyClass instance3 = new MyClass();
+            instance3.ReadFile();
         }
     }
 }
