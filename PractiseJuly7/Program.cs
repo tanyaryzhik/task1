@@ -21,17 +21,17 @@ namespace PractiseJuly7
         public static void CollectionExample()
         {
             Employee[] firstCollection = new Employee[] {
-                new Employee{ FirstName = "Tatiana", LastName = "Ryzhik", Age = 38, Gender = "F", Company = "ParkMe"},
-               new Employee{ FirstName = "Olga", LastName = "Pavlenko", Age = 36, Gender = "F", Company = "ParkMe"},
-               new Employee{ FirstName = "Helen", LastName = "Zub", Age = 20, Gender = "F", Company = "Max"},
-               new Employee{ FirstName = "Kirill", LastName = "Novikov", Age = 26, Gender = "M", Company = "ParkMe"},
+                new Employee { FirstName = "Tatiana", LastName = "Ryzhik", Age = 38, Gender = "F", Company = "ParkMe"},
+               new Employee { FirstName = "Olga", LastName = "Pavlenko", Age = 36, Gender = "F", Company = "ParkMe"},
+               new Employee { FirstName = "Helen", LastName = "Zub", Age = 20, Gender = "F", Company = "Max"},
+               new Employee { FirstName = "Kirill", LastName = "Novikov", Age = 26, Gender = "M", Company = "ParkMe"},
             };
             Employee[] secondCollection = new Employee[] {
-                new Employee{ FirstName = "Helen", LastName = "Zub", Age = 20, Gender = "F", Company = "Max"},
-               new Employee{ FirstName = "Kirill", LastName = "Novikov", Age = 26, Gender = "M", Company = "ParkMe"},
-               new Employee{ FirstName = "Alex", LastName = "Matsegora", Age = 25, Gender = "M", Company = "Max"},
-               new Employee{ FirstName = "Oleg", LastName = "Reshetilo", Age = 26, Gender = "M", Company = "Admin"},
-               new Employee{ FirstName = "Valeriy", LastName = "Malinovskiy", Age = 22, Gender = "M", Company = "Here"},
+                new Employee { FirstName = "Helen", LastName = "Zub", Age = 20, Gender = "F", Company = "Max"},
+               new Employee { FirstName = "Kirill", LastName = "Novikov", Age = 26, Gender = "M", Company = "ParkMe"},
+               new Employee { FirstName = "Alex", LastName = "Matsegora", Age = 25, Gender = "M", Company = "Max"},
+               new Employee { FirstName = "Oleg", LastName = "Reshetilo", Age = 26, Gender = "M", Company = "Admin"},
+               new Employee { FirstName = "Valeriy", LastName = "Malinovskiy", Age = 22, Gender = "M", Company = "Here"},
             };
 
             var collectionWithDuplicates = firstCollection.Concat(secondCollection);
@@ -51,6 +51,7 @@ namespace PractiseJuly7
             Console.WriteLine("Employees of first collection plus one more:");
             Display(firstList);
         }
+
         public static void DeferedExample()
         {
             var employees = Employee.GetEmployees();
