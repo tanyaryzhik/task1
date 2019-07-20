@@ -10,7 +10,10 @@ namespace task1
     {
         static void Main(string[] args)
         {
-
+            Fridge fridge = new Fridge { FridgeDoor = Door.FreezerCamera, FridgeState = State.TurnOff };
+            FridgeManager manager = new FridgeManager(fridge);
+            manager.Execute();
+            Console.ReadLine();
         }
     }
 }
