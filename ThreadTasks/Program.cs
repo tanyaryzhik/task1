@@ -9,25 +9,28 @@ namespace ThreadTasks
 {
     class Program
     {
+        static int x = 0;
+        static object l = new object();
         static void Main(string[] args)
         {
-            int n = 15;
-            Thread thread = new Thread(new ParameterizedThreadStart(Count));
-            thread.Start(n);
             for (int i = 1; i < 5; i++)
             {
-                Console.WriteLine("First thread: " + i * n);
-                Thread.Sleep(100);
+                Thread t = new Thread(Count);
+                t.Name = "Thread " + i.ToString();
+                t.Start();
             }
         }
 
-        static void Count(object x)
+        static void Count(object obj)
         {
-            int n = (int)x;
-            for (int i = 1; i < 5; i++)
+            lock (l)
             {
-                Console.WriteLine("Second thread: " + i * n);
-                Thread.Sleep(100);
+                x = 1;
+                for (int i = 1; i < 5; i++)
+                {
+                    Console.WriteLine("{0}: {1}", Thread.CurrentThread.Name, x);
+                    Thread.Sleep(100);
+                }
             }
         }
     }
