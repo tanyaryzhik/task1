@@ -44,8 +44,8 @@ namespace MyProject
 
         ~MyClass()
         {
-            CloseFile();
-           // Dispose(false);
+           //CloseFile();
+           Dispose(false);
         }
     }
 }
