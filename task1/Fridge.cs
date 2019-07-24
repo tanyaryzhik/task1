@@ -24,21 +24,29 @@ namespace task1
             Console.WriteLine("What door to open R or F?");
             string door = Console.ReadLine();
             if (door == "R")
+            {
                 this.FridgeDoor = Door.RegularCamera;
+                Console.WriteLine("Door of regular camera has been opened");
+            }
             if (door == "F")
+            {
                 this.FridgeDoor = Door.FreezerCamera;
+                Console.WriteLine("Door of freezer camera has been opened");
+            }
             OnStateChanged(new FridgeHandlerEventArgs(this.FridgeState, this.FridgeDoor));
         }
 
         public void TurnOffFridge()
         {
             this.FridgeState = State.TurnOff;
+            Console.WriteLine("Fridge has been turned off");
             OnStateChanged(new FridgeHandlerEventArgs(this.FridgeState, this.FridgeDoor));
         }
 
         public void TurnOnFridge()
         {
             this.FridgeState = State.TurnOn;
+            Console.WriteLine("Fridge has been turned on");
             OnStateChanged(new FridgeHandlerEventArgs(this.FridgeState,this.FridgeDoor));
         }
 

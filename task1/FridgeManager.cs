@@ -24,6 +24,7 @@ namespace task1
         {
             this.Fridge.TurnOnFridge();
             this.Fridge.OpenDoor();
+            this.Fridge.TurnOffFridge();
         }
     }
 }
