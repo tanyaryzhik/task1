@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task1", "task1\task1.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadTasks", "ThreadTasks\ThreadTasks.csproj", "{F266CAE7-058A-4445-8CB4-AABC0C8AB70B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "Matrix\Matrix.csproj", "{BBAB5E88-F648-48E0-B7CB-5545B656D948}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F266CAE7-058A-4445-8CB4-AABC0C8AB70B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F266CAE7-058A-4445-8CB4-AABC0C8AB70B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F266CAE7-058A-4445-8CB4-AABC0C8AB70B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBAB5E88-F648-48E0-B7CB-5545B656D948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBAB5E88-F648-48E0-B7CB-5545B656D948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBAB5E88-F648-48E0-B7CB-5545B656D948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBAB5E88-F648-48E0-B7CB-5545B656D948}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
