@@ -12,8 +12,6 @@ namespace Matrix
         static void Main(string[] args)
         {
             new Executer().Run();
-            //new SymbolChain().MoveChain();
-            
         }
     }
 }
