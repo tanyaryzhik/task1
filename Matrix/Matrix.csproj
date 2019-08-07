@@ -46,9 +46,7 @@
     <Compile Include="Executer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Symbol.cs" />
     <Compile Include="SymbolChain.cs" />
-    <Compile Include="SymbolColor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

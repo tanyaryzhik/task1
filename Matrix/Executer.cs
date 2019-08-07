@@ -12,24 +12,29 @@ namespace Matrix
     {
         private SymbolChain[] symbolChains;
 
+        private static object locker;
+
         public Executer()
         {
-            this.symbolChains = new SymbolChain[10];
-            for (int i = 0; i < 10; i++)
+            locker = new object();
+            this.symbolChains = new SymbolChain[2];
+            for (int i = 0; i < 2; i++)
             {
                 symbolChains[i] = new SymbolChain();
-                symbolChains[i].SetCoordX(i);
+                symbolChains[i].SetCoordX(i*10);
             }
         }
 
         public void Run()
         {
-            Task[] tasks = new Task[10];
+            Task[] tasks = new Task[2];
             for (int i = 0; i < tasks.Length; i++)
             {
                 //Task t = new Task(symbolChains[i].MoveChain);
                 //Task t = Task.Run(() => symbolChains[i].MoveChain());
-                tasks[i] = Task.Factory.StartNew(() => symbolChains[i].MoveChain());
+                
+                    tasks[i] = Task.Factory.StartNew(() => symbolChains[i].MoveChain());
+                
             }
             
         }

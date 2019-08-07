@@ -9,7 +9,7 @@ namespace Matrix
 {
     public class SymbolChain
     {
-        public const int WindowHeight = 25;
+        public const int WindowHeight = 40;
 
         public const int WindowWidth = 100;
 
@@ -25,16 +25,16 @@ namespace Matrix
 
         public object locker;
 
-        private Symbol[] symbols;
+        private ConsoleColor color;
 
         private void SetChainLength()
         {
-            this.chainLength = new Random().Next(3, 10);
+            this.chainLength = new Random().Next(5, 10);
         }
 
         public void SetCoordX(int shift)
         {
-            this.coordX = shift*10;
+            this.coordX = shift;
         }
 
 
@@ -53,34 +53,38 @@ namespace Matrix
         {
             for (int i = 0; i < this.chainLength; i++)
             {
-                SetSymbolColor();
                 Console.SetCursorPosition(this.coordX, this.coordY + i);
+                Console.ForegroundColor = SetSymbolColor(i);
                 Console.WriteLine((char)this.random.Next(33, 122));
             }
         }
 
-        private void DrawShortChain()
+        public ConsoleColor SetSymbolColor(int i)
         {
-            for (int i = 0; i < this.chainLength; i++)
+            
+            if (this.coordY + this.tempChainLength < WindowHeight)
             {
-                SetSymbolColor();
-                Console.SetCursorPosition(this.coordX, this.coordY + i);
-                Console.WriteLine((char)this.random.Next(33, 122));
+                if (i == this.chainLength - 1)
+                    this.color = ConsoleColor.White;
+                else if (i == this.chainLength - 2)
+                    this.color = ConsoleColor.Green;
+                else
+                    this.color = ConsoleColor.DarkGreen;
             }
-        }
-
-        public void SetSymbolColor()
-        {
-            if (this.tempChainLength - this.chainLength == 1)
-                Console.ForegroundColor = ConsoleColor.Green;
-            else
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-            if (i == this.chainLength - 1)
-                Console.ForegroundColor = ConsoleColor.White;
-            else if (i == this.chainLength - 2)
-                Console.ForegroundColor = ConsoleColor.Green;
-            else
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
+            else if (this.tempChainLength > this.chainLength)
+            {
+                if (this.tempChainLength - this.chainLength == 1)
+                {
+                    if (i == this.chainLength - 1)
+                        this.color = ConsoleColor.Green;
+                    else
+                        this.color = ConsoleColor.DarkGreen;
+                }
+                else
+                    this.color = ConsoleColor.DarkGreen;
+            }
+            
+            return this.color;
         }
 
         public void MoveChain()
@@ -96,7 +100,8 @@ namespace Matrix
                             this.chainLength--;
                         }
 
-                        DrawChain();
+                        if (this.chainLength !=0)
+                            DrawChain();
                         
                         if (this.coordY > SymbolChain.WindowHeight)
                         {
@@ -105,7 +110,7 @@ namespace Matrix
                             this.SetChainLength();
                             continue;
                         }
-                        Thread.Sleep(random.Next(1000));
+                        Thread.Sleep(random.Next(3000));
                         Console.SetCursorPosition(this.coordX, this.coordY);
                         Console.Write(" ");
                         this.coordY++;
