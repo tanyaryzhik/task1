@@ -12,10 +12,13 @@ namespace task1
 
         public Door FridgeDoor { get; set; }
 
-        public FridgeHandlerEventArgs(State state, Door door)
+        public string ActionMessage { get; set; }
+
+        public FridgeHandlerEventArgs(State state, Door door, string message)
         {
             this.FridgeDoor = door;
             this.FridgeState = state;
+            this.ActionMessage = message;
         }
     }
 }

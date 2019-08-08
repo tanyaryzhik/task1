@@ -10,15 +10,13 @@ namespace Matrix
 {
     public class Executer
     {
-        static int WindowHeight = 25;
+        private const int WindowHeight = 25;
 
-        static int WindowWidth = 100;
+        private const int WindowWidth = 100;
 
-        static object locker1 = new object();
+        private static object locker = new object();
 
-        //object locker2 = new object();
-
-         public Executer()
+        public Executer()
         {
             Console.WindowHeight = WindowHeight;
             Console.WindowWidth = WindowWidth;
@@ -26,38 +24,29 @@ namespace Matrix
 
         public void Run()
         {
-            Task[] tasks = new Task[2]
-            {
-                new Task(() => MoveChain(0, 0, SetChainLength())),
-                new Task(() => MoveChain(1, 0, SetChainLength()))
-            };
+            Task[] tasks = new Task[WindowWidth];
 
-            //for (int i = 0; i < 2; i++)
-            //{
-            //    tasks[i] = new Task(() => MoveChain(i, 0, SetChainLength()));
-            //    //tasks[i] = Task.Factory.StartNew(() => MoveChain(i, 0, SetChainLength()));
-            //}
-            foreach (var item in tasks)
+            for (int i = 0; i < WindowWidth; i++)
             {
-                item.Start();
+                tasks[i] = Task.Factory.StartNew(() => MoveChain(i, new Random().Next(0, WindowHeight / 2), SetChainLength()));
+                Thread.Sleep(1000);
             }
-         }
+
+            Task.WaitAll(tasks);
+        }
 
         private void DrawChain(int coordX, int coordY, int chainLength, ColorCondition colorCondition)
         {
-            lock (Console.Out)
+            Random random = new Random();
+            for (int i = 0; i < chainLength; i++)
             {
-                Random random = new Random();
-                for (int i = 0; i < chainLength; i++)
-                {
-                    Console.SetCursorPosition(coordX, coordY + i);
-                    Console.ForegroundColor = SetSymbolColor(i, chainLength, coordY, colorCondition);
-                    Console.WriteLine((char)random.Next(33, 122));
-                }
+                Console.SetCursorPosition(coordX, coordY + i);
+                Console.ForegroundColor = SetSymbolColor(i, chainLength, coordY, colorCondition);
+                Console.WriteLine((char)random.Next(33, 122));
             }
         }
 
-        public ConsoleColor SetSymbolColor(int i, int chainLength, int coordY, ColorCondition colorCondition)
+        private ConsoleColor SetSymbolColor(int i, int chainLength, int coordY, ColorCondition colorCondition)
         {
             ConsoleColor color = ConsoleColor.Black;
 
@@ -70,6 +59,7 @@ namespace Matrix
                 else
                     color = ConsoleColor.DarkGreen;
             }
+
             else if (colorCondition == ColorCondition.Shorter)
             {
                 if (i == chainLength - 1)
@@ -77,20 +67,23 @@ namespace Matrix
                 else
                     color = ConsoleColor.DarkGreen;
             }
+
             else if (colorCondition == ColorCondition.Short)
                 color = ConsoleColor.DarkGreen;
 
             return color;
         }
 
-        public void MoveChain(int coordX, int coordY, int chainLength)
+        private void MoveChain(int coordX, int coordY, int chainLength)
         {
-            lock (Console.Out)
+            while (true)
             {
-                while (true)
+                ColorCondition colorCondition = ColorCondition.Long;
+
+                for (int i = 0; i < WindowHeight; i++)
                 {
-                    ColorCondition colorCondition = ColorCondition.Long;
-                    for (int i = 0; i < WindowHeight; i++)
+                    Thread.Sleep(1000);
+                    lock (locker)
                     {
                         if (coordY >= WindowHeight - chainLength)
                         {
@@ -115,7 +108,7 @@ namespace Matrix
                             colorCondition = ColorCondition.Long;
                             continue;
                         }
-                        Thread.Sleep(1000);
+
                         Console.SetCursorPosition(coordX, coordY);
                         Console.Write(" ");
                         coordY++;
@@ -123,18 +116,10 @@ namespace Matrix
                 }
             }
         }
-    
 
-        public int SetChainLength()
+        private int SetChainLength()
         {
             return new Random().Next(3, 10);
         }
     }
 }
-
-    public enum ColorCondition
-    {
-        Long = 0,
-        Shorter = 1,
-        Short = 2
-    }

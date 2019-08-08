@@ -9,15 +9,17 @@ namespace task1
     public class FridgeManager
     {
         public Fridge Fridge { get; set; }
+
         public FridgeManager(Fridge fridge)
         {
             this.Fridge = fridge;
-            this.Fridge.FridgeStateChangedEvent += ManageFridgeState;
+            this.Fridge.FridgeStateChangedEvent += ChangingMessage;
         }
 
-        public void ManageFridgeState(object sender, FridgeHandlerEventArgs args)
+        public void ChangingMessage(object sender, FridgeHandlerEventArgs args)
         {
-            this.Fridge.GetFridgeState();
+            Console.WriteLine(args.ActionMessage);
+ 
         }
 
         public void Execute()
