@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Racing
 {
-    public class MyCar : Figure
+    public class OtherCar : Figure
     {
-        public MyCar(char symbol, ConsoleColor color)
+        public OtherCar(char symbol, ConsoleColor color)
             : base(symbol, color)
         {
-            this.InitializeSate();
+           
         }
+
         public override void Move(MoveDirection moveDirection, Func<Figure, bool> canMove)
         {
             throw new NotImplementedException();

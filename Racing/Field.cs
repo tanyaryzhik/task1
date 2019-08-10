@@ -20,14 +20,12 @@ namespace Racing
 
         public Field()
         {
-            this.Width = this.startX + 10;
-            this.Heigth = this.startY + 20;
+           this.Initialize();
         }
 
         private void Initialize()
         {
-            this.startX = 10;
-            this.startY = 10;
+           
             //initialize figure list
   
         }

@@ -10,12 +10,14 @@ namespace Racing
     {
         protected List<Node> Nodes { get; set; }
 
-        public char symbol;
+        public char Symbol { get; set; }
 
-        public ConsoleColor color;
+        public ConsoleColor Color { get; set; }
 
         public Figure(char symbol, ConsoleColor color)
         {
+            this.Symbol = symbol;
+            this.Color = color;
             this.InitializeSate();
         }
 

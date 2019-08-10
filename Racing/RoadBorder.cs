@@ -9,26 +9,19 @@ namespace Racing
     public class RoadBorder : Figure
     {
         public RoadBorder(char symbol, ConsoleColor color)
+            : base(symbol, color)
         {
-            this.symbol = symbol;
-            this.color = color;
-
-
+           
         }
 
-        public override void InitializeSate()
+        protected override void InitializeSate()
         {
-            this.nodes = new List<Node>
-            {
-                new Node(0, 0),
-                new Node(10, 0)
-            };
+            this.Nodes = new List<Node>();
+            
             for (int i = 0; i < 20; i++)
             {
-                foreach (var item in nodes)
-                {
-                    Console.WriteLine(item.);
-                }
+               
+                
             }
         }
 
