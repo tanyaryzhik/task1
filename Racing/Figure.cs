@@ -8,16 +8,19 @@ namespace Racing
 {
     public abstract class Figure
     {
-        protected List<Node> nodes;
+        protected List<Node> Nodes { get; set; }
 
         public char symbol;
 
         public ConsoleColor color;
 
-        //Figure(char symbol, ConsoleColor color);
+        public Figure(char symbol, ConsoleColor color)
+        {
+            this.InitializeSate();
+        }
 
-        public abstract void InitializeSate();
-
+        protected abstract void InitializeSate();
+              
         public abstract void Move(MoveDirection moveDirection, Func<Figure, bool> canMove);
     }
 }
