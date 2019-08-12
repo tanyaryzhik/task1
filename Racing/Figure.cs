@@ -23,6 +23,6 @@ namespace Racing
 
         protected abstract void InitializeSate();
               
-        public abstract void Move(MoveDirection moveDirection, Func<Figure, bool> canMove);
+        //public abstract void Move(MoveDirection moveDirection, Func<Figure, bool> canMove);
     }
 }

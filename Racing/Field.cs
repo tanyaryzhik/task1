@@ -12,9 +12,9 @@ namespace Racing
 
         private int startY;
 
-        public int Width { get; }
+        public int Width { get; set; }
 
-        public int Heigth { get; }
+        public int Heigth { get; set; }
 
         private List<Figure> figures;
 
@@ -25,9 +25,9 @@ namespace Racing
 
         private void Initialize()
         {
-           
-            //initialize figure list
-  
+            this.Width = 10;
+            this.Heigth = 20;
+            RoadBorder roadBorder = new RoadBorder((char)254, ConsoleColor.DarkBlue);
         }
 
         private bool IsPositionFree(Figure figure)

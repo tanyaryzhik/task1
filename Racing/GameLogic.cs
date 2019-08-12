@@ -18,7 +18,7 @@ namespace Racing
         {
         }
 
-        private EndGame()
+        private void EndGame()
         {
 
         }
