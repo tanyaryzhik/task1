@@ -10,7 +10,7 @@ namespace Racing
     {
         static void Main(string[] args)
         {
-            new RoadBorder().DrawBorder();
+            new RoadBorder().MoveBorder();
         }
     }
 }

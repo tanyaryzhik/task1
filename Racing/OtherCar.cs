@@ -8,8 +8,12 @@ namespace Racing
 {
     public class OtherCar : Car
     {
+        private int startX;
+
         public OtherCar(char symbol) : base(symbol)
         {
+            this.Initialize();
+            this.startX =
         }
 
         protected override void Initialize()
@@ -23,6 +27,11 @@ namespace Racing
                 new Node(2,2),
                 new Node(1,3)
             };
+        }
+
+        public void Move()
+        {
+
         }
     }
 }

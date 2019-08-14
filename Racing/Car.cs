@@ -32,7 +32,16 @@ namespace Racing
             
         }
 
-        protected void Move(MoveDirection direction)
+        protected virtual void Draw()
+        {
+            foreach (Node node in this.Nodes)
+            {
+                Console.SetCursorPosition(node.coordX, node.coordY);
+                Console.WriteLine(this.symbol);
+            }
+        }
+
+        public virtual void Move(MoveDirection direction)
         {
             foreach (Node node in this.Nodes)
             {
@@ -60,6 +69,8 @@ namespace Racing
                         }
                 }
             }
+
+            this.Draw();
         }
     }
 }

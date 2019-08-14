@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Racing
@@ -25,16 +26,33 @@ namespace Racing
             }
         }
 
-        public void DrawBorder()
+        public void Draw()
         {
             for (int i = 0; i < this.nodes.Count; i++)
             {
                 Console.SetCursorPosition(this.nodes[i].coordX, this.nodes[i].coordY);
-                if (i != 3)
-                Console.Write('N');
+                if (i == 6 || i == 7 || i == 14 || i == 15 || i == 22 || i == 23 || i == 30 || i == 31 || i == 38 || i == 39)
+                    Console.Write(' ');
+                else
+                    Console.Write('N');
+
             }
         }
 
-        //public void
+        public void MoveBorder()
+        {
+            while (true)
+            {
+                for (int i = 0; i < this.nodes.Count; i++)
+                {
+                    if (this.nodes[i].coordY == 20)
+                        this.nodes[i].coordY = 0;
+
+                    this.nodes[i].Down();
+                }
+                Draw();
+                Thread.Sleep(500);
+            }
+        }
     }
 }

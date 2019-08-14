@@ -11,5 +11,11 @@ namespace Racing
         public MyCar(char symbol) : base(symbol)
         {
         }
+
+        public override void Move(MoveDirection direction)
+        {
+
+            base.Move(direction);
+        }
     }
 }
