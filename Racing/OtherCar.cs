@@ -43,7 +43,32 @@ namespace Racing
 
         public void Move()
         {
+            char temp = ' ';
+            int i = 0;
+            do
+            {
+                if (i >= 16)
+                {
 
+                }
+                this.Draw();
+                temp = this.symbol;
+                this.symbol = ' ';
+                this.Draw();
+                this.symbol = temp;
+                i++;
+                this.Down();
+
+
+            } while (true);
+        }
+
+        private void Down()
+        {
+            foreach (var item in this.Nodes)
+            {
+                item.Down();
+            }
         }
     }
 }

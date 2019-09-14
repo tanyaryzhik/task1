@@ -48,5 +48,14 @@ namespace Racing
             }
         }
 
+        protected virtual void LeftPosition()
+        {
+            this.Nodes = this.leftPosition;
+        }
+
+        protected virtual void RightPosition()
+        {
+            this.Nodes = this.rightPosition;
+        }
     }
 }

@@ -37,15 +37,7 @@ namespace Racing
             this.Nodes = this.leftPosition;
         }
 
-        protected void LeftPosition()
-        {
-            this.Nodes = this.leftPosition;
-        }
-
-        protected void RightPosition()
-        {
-            this.Nodes = this.rightPosition;
-        }
+       
 
         public void Move(ConsoleKeyInfo key)
         {
