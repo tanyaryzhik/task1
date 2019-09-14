@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Racing
 {
+
     public class Field
     {
         private RoadBorder roadBorder;
@@ -18,18 +19,19 @@ namespace Racing
 
         public Field()
         {
-           
+
             Initialize();
-            
             Move();
             
         }
 
         public void Move()
         {
-            Task[] tasks = new Task[2];
+            Task[] tasks = new Task[3];
             tasks[0] = Task.Factory.StartNew(this.roadBorder.Move);
-            tasks[1] = Task.Factory.StartNew(this.key.StartReadKey);
+            tasks[1] = Task.Factory.StartNew(this.otherCar.Move);
+            tasks[2] = Task.Factory.StartNew(this.key.StartReadKey);
+
 
             Task.WaitAll(tasks);
             

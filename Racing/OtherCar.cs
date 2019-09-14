@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Racing
@@ -44,22 +45,25 @@ namespace Racing
         public void Move()
         {
             char temp = ' ';
-            int i = 0;
+            
             do
             {
-                if (i >= 16)
-                {
-
-                }
                 this.Draw();
                 temp = this.symbol;
                 this.symbol = ' ';
                 this.Draw();
                 this.symbol = temp;
-                i++;
+                
                 this.Down();
-
-
+                
+                    foreach (var item in this.Nodes)
+                    {
+                        if (item.coordY == 19)
+                            item.coordY = 0;
+                    }
+               
+               
+                Thread.Sleep(1000);
             } while (true);
         }
 
